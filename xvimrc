@@ -1,0 +1,12 @@
+"set incsearch
+set ic
+set smartcase
+
+nmap :q :xccmd<Space>closeDocument
+nmap :wq :w<cr>:xccmd<Space>closeDocument
+nmap :e <Esc>
+nmap :r :run
+nmap :b :make
+nmap :test :w<cr>:xccmd<Space>testActiveRunContext
+
+imap jk <Esc>
