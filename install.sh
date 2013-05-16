@@ -39,4 +39,4 @@ do
 done
 
 git submodule init
-git submodule fetch
+git submodule update
