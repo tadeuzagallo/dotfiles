@@ -54,3 +54,5 @@ fi
 unsetopt nomatch
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
