@@ -1,15 +1,15 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-. /Users/tadeu/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 #
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="awesomepanda"
+export ZSH_THEME="../../my-custom"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
