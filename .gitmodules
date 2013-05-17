@@ -7,3 +7,33 @@
 [submodule "vim/bundle/clang_complete"]
 	path = vim/bundle/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete
+[submodule "vim/bundle/clang_complete-getopts-ios"]
+	path = vim/bundle/clang_complete-getopts-ios
+	url = https://github.com/tokorom/clang_complete-getopts-ios
+[submodule "vim/bundle/cocoa.vim"]
+	path = vim/bundle/cocoa.vim
+	url = https://github.com/msanders/cocoa.vim
+[submodule "vim/bundle/kiwi.vim"]
+	path = vim/bundle/kiwi.vim
+	url = https://github.com/vim-scripts/kiwi.vim
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/vim-haml"]
+	path = vim/bundle/vim-haml
+	url = https://github.com/tpope/vim-haml
+[submodule "vim/bundle/vim-ios"]
+	path = vim/bundle/vim-ios
+	url = https://github.com/eraserhd/vim-ios
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/bundle/vim-jquery"]
+	path = vim/bundle/vim-jquery
+	url = https://github.com/itspriddle/vim-jquery
+[submodule "vim-markdown-preview"]
+	path = vim-markdown-preview
+	url = https://github.com/nelstrom/vim-markdown-preview

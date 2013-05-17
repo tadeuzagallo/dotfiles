@@ -11,6 +11,11 @@ original_path() {
   echo "$dir/$1"
 }
 
+source $dir/dependencies.txt
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
 mkdir -p ~/Library/Fonts &> /dev/null
 cp ./Source+Code+Pro+Regular+for+Powerline.otf ~/Library/Fonts &> /dev/null
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
