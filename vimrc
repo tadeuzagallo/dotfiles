@@ -76,7 +76,7 @@ vmap  o  :call NERDComment(1, 'toggle')<CR>
 vmap  O  :call NERDComment(1, 'toggle')<CR>
 
 vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-nnoremap <leader>f :CommandTFlush<CR>\|:CommandT<CR>
+nnoremap <leader>f :CtrlP<cr>
 
 " vim-ios
 nnoremap <leader>s :A<CR>
