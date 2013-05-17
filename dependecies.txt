@@ -1,7 +1,7 @@
+chsh -s /bin/zsh
 brew install tmux
 brew install macvim --env-std --override-system-vim
-brew install reattach-to-namespace
-brew install fontforge
+brew install reattach-to-user-namespace
 sudo easy_install pip
 sudo pip install powerline
-
+cd /tmp && git clone https://github.com/JugglerShu/XVim && cd XVim && open XVim.xcodeproj && cd -
