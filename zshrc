@@ -59,6 +59,6 @@ PATH=$PATH:$HOME/.rvm/bin:/usr/local/share/npm/bin # Add RVM to PATH for scripti
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export NODE_ENV=development
 
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source ./zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
