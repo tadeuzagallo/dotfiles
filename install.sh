@@ -21,7 +21,7 @@ cp ./Source+Code+Pro+Regular+for+Powerline.otf ~/Library/Fonts &> /dev/null
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
 cp ./RailsCasts.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
 
-for file in config gitconfig oh-my-zsh tmux.conf vim vimrc xvimrc zshrc
+for file in config gitconfig oh-my-zsh tmux.conf vim vimrc xvimrc zshrc zsh-syntax-highlighting zsh-history-substring-search
 do
   link=$(link_path $file)
   original=$(original_path $file)
