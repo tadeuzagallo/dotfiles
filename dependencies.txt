@@ -5,4 +5,4 @@ brew install reattach-to-user-namespace
 sudo easy_install pip
 sudo pip install powerline
 git clone https://github.com/JugglerShu/XVim /tmp && cd /tmp/XVim && open XVim.xcodeproj && cd -
-git clone https://github.com/omz/MiniXcode /tmp && cd /tmp/MiniXcode && open MiniXcode.vim && cd -
+git clone https://github.com/omz/MiniXcode /tmp && cd /tmp/MiniXcode && open OMMiniXcode.xcodeproj && cd -
