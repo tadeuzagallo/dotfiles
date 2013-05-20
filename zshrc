@@ -28,7 +28,7 @@ export ZSH_THEME="../../my-custom"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew node npm osx ruby rails vi-mode zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git brew node npm osx ruby rails vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,4 +55,10 @@ unsetopt nomatch
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:/usr/local/share/npm/bin # Add RVM to PATH for scripting
+export NODE_PATH=/usr/local/share/npm/lib/node_modules
+export NODE_ENV=development
+
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ./zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+
