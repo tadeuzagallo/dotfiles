@@ -1,3 +1,4 @@
+hash brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 chsh -s /bin/zsh
 brew install tmux
 brew install macvim --env-std --override-system-vim
