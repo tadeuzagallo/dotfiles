@@ -9,3 +9,4 @@ pip install --user git+git://github.com/Lokaltog/powerline
 sudo chmod -R 755 ~/Library/Python
 git clone https://github.com/JugglerShu/XVim /tmp && cd /tmp/XVim && open XVim.xcodeproj && cd -
 git clone https://github.com/omz/MiniXcode /tmp && cd /tmp/MiniXcode && open OMMiniXcode.xcodeproj && cd -
+curl -L https://get.rvm.io | bash -s stable --rails
