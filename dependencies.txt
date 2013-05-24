@@ -3,7 +3,9 @@ chsh -s /bin/zsh
 brew install tmux
 brew install macvim --env-std --override-system-vim
 brew install reattach-to-user-namespace
+brew install ack
 sudo easy_install pip
-sudo pip install powerline
+pip install --user git+git://github.com/Lokaltog/powerline
+sudo chmod -R 755 ~/Library/Python
 git clone https://github.com/JugglerShu/XVim /tmp && cd /tmp/XVim && open XVim.xcodeproj && cd -
 git clone https://github.com/omz/MiniXcode /tmp && cd /tmp/MiniXcode && open OMMiniXcode.xcodeproj && cd -

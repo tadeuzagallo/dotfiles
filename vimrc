@@ -4,7 +4,7 @@ set encoding=utf-8
 cmap w!! %!sudo tee > /dev/null %
 let g:Powerline_symbols = 'fancy'
 
-set rtp+=/Users/tadeu/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 call pathogen#infect()
 call pathogen#helptags()
