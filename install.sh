@@ -45,3 +45,5 @@ done
 
 git submodule init
 git submodule update
+
+mkdir -p ~/.gem &>/dev/null
