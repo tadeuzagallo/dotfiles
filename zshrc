@@ -62,5 +62,5 @@ export NODE_ENV=development
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
-export GEM_HOME=~/.gem
-export GEM_PATH=~/.gem
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
