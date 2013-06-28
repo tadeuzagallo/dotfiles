@@ -97,3 +97,16 @@ nnoremap <silent>` :Errors<CR>
 " cocoa.vim
 
 nnoremap <silent> <leader>l :ListMethods<CR>
+
+" vim-fugitive
+nnoremap <leader><leader> :
+nnoremap <silent><leader>q :q<cr>
+nnoremap <silent><leader>w :w<cr>
+nnoremap <silent><leader>v <C-w>v
+nnoremap <silent><leader>x <C-w>s
+nnoremap <silent><leader>b :Gblame<cr>
+nnoremap <silent><leader>a :Gwrite<CR>
+nnoremap <silent><leader>o :Gread<CR>
+nnoremap <silent><leader>r :Git reset % <CR>
+nnoremap <silent><leader>s :Gstatus<CR>
+nnoremap <silent><leader>c :Gcommit<CR>
