@@ -5,13 +5,14 @@
 [color]
   ui = auto
 [alias]
-  st = status
-  ci = commit
+  s = status
+  c = commit
   co = checkout
-  di = diff
+  d = diff
   dc = diff --cached
   ca = commit --amend
-  aa = add -A
+  a = add
+  A = add -A
   head = log -1
   pom = push origin master
   phm = push heroku master
