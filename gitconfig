@@ -5,16 +5,16 @@
 [color]
   ui = auto
 [alias]
-  ;st = status
-  ;ci = commit
-  ;co = checkout
-  ;di = diff
-  ;dc = diff -- cached
-  ;ammend = commit --amend
-  ;aa = add --al
-  ;head = log -1
-  ;pom = push origin master
-  ;phm = push heroku master
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  ca = commit --amend
+  aa = add -A
+  head = log -1
+  pom = push origin master
+  phm = push heroku master
   lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
   lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit
   l = !"git lg1"

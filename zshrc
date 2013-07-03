@@ -28,7 +28,8 @@ export ZSH_THEME="../../my-custom"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew node npm osx ruby rails vi-mode)
+#plugins=(git brew node npm osx ruby rails vi-mode)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,6 +41,13 @@ export CLASSPATH=~/www/coursera/Algorithms\ I/algs4.jar:~/www/coursera/Algorithm
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias ev='vim ~/.vimrc'
+
+alias g='git'
+alias v='vim'
+alias c='clear'
+alias mm='middleman'
+alias e='exit'
+alias l='ls -la'
 
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
