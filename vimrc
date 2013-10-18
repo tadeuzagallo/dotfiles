@@ -110,3 +110,17 @@ nnoremap <silent><leader>o :Gread<CR>
 nnoremap <silent><leader>r :Git reset % <CR>
 nnoremap <silent><leader>s :Gstatus<CR>
 nnoremap <silent><leader>c :Gcommit<CR>
+
+" NerdTREE
+noremap <silent><leader><tab> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * if !argc() | NERDTree | endif
+
+" Tabular
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+

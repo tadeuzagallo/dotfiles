@@ -22,3 +22,5 @@
   lg = !"git lg2"
   git = "!git"
 
+[core]
+	excludesfile = /Users/tadeu/.global_ignore

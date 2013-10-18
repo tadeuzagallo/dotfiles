@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorSession>
+<!-- Written by QtCreator 2.8.1, 2013-10-06T20:03:55. -->
+<qtcreator>
+ <data>
+  <variable>Color</variable>
+  <value type="QString">#666666</value>
+ </data>
+ <data>
+  <variable>EditorSettings</variable>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAMAAAB8AC8AVQBzAGUAcgBzAC8AdABhAGQAZQB1AC8AUQB0AC8ANQAuADEALgAxAC8AYwBsAGEAbgBnAF8ANgA0AC8AaQBuAGMAbAB1AGQAZQAvAFEAdABXAGkAZABnAGUAdABzAC8AcQBtAGEAaQBuAHcAaQBuAGQAbwB3AC4AaAAAAAwAAAAAHAAAAAEAAAAAAAAAAAAAAD0AAAAAAAAAAQAAAAAAAACsAC8AVQBzAGUAcgBzAC8AdABhAGQAZQB1AC8AUQB0AC8ANQAuADEALgAxAC8AYwBsAGEAbgBnAF8ANgA0AC8AZQB4AGEAbQBwAGwAZQBzAC8AdwBpAGQAZwBlAHQAcwAvAG0AYQBpAG4AdwBpAG4AZABvAHcAcwAvAGEAcABwAGwAaQBjAGEAdABpAG8AbgAvAG0AYQBpAG4AdwBpAG4AZABvAHcALgBjAHAAcAAAAAwAAAAAHAAAAAEAAAE4AAAAAAAAAEcAAAAPAAAAAQAAAAAAAACgAC8AVQBzAGUAcgBzAC8AdABhAGQAZQB1AC8AUQB0AC8ANQAuADEALgAxAC8AYwBsAGEAbgBnAF8ANgA0AC8AZQB4AGEAbQBwAGwAZQBzAC8AdwBpAGQAZwBlAHQAcwAvAG0AYQBpAG4AdwBpAG4AZABvAHcAcwAvAGEAcABwAGwAaQBjAGEAdABpAG8AbgAvAG0AYQBpAG4ALgBjAHAAcAAAAAwAAAAAGAAAAAEAAAAOAAAAAAAAADcAAAAWAAAAAAAAAAMAAACgAC8AVQBzAGUAcgBzAC8AdABhAGQAZQB1AC8AUQB0AC8ANQAuADEALgAxAC8AYwBsAGEAbgBnAF8ANgA0AC8AZQB4AGEAbQBwAGwAZQBzAC8AdwBpAGQAZwBlAHQAcwAvAG0AYQBpAG4AdwBpAG4AZABvAHcAcwAvAGEAcABwAGwAaQBjAGEAdABpAG8AbgAvAG0AYQBpAG4ALgBjAHAAcAAAABAAbQBhAGkAbgAuAGMAcABwAAAAE0NwcEVkaXRvci5DKytFZGl0b3IAAACsAC8AVQBzAGUAcgBzAC8AdABhAGQAZQB1AC8AUQB0AC8ANQAuADEALgAxAC8AYwBsAGEAbgBnAF8ANgA0AC8AZQB4AGEAbQBwAGwAZQBzAC8AdwBpAGQAZwBlAHQAcwAvAG0AYQBpAG4AdwBpAG4AZABvAHcAcwAvAGEAcABwAGwAaQBjAGEAdABpAG8AbgAvAG0AYQBpAG4AdwBpAG4AZABvAHcALgBjAHAAcAAAABwAbQBhAGkAbgB3AGkAbgBkAG8AdwAuAGMAcABwAAAAE0NwcEVkaXRvci5DKytFZGl0b3IAAAB8AC8AVQBzAGUAcgBzAC8AdABhAGQAZQB1AC8AUQB0AC8ANQAuADEALgAxAC8AYwBsAGEAbgBnAF8ANgA0AC8AaQBuAGMAbAB1AGQAZQAvAFEAdABXAGkAZABnAGUAdABzAC8AcQBtAGEAaQBuAHcAaQBuAGQAbwB3AC4AaAAAABoAcQBtAGEAaQBuAHcAaQBuAGQAbwB3AC4AaAAAABNDcHBFZGl0b3IuQysrRWRpdG9yAAABCwAAAA1jdXJyZW50ZWRpdG9yAAAArAAvAFUAcwBlAHIAcwAvAHQAYQBkAGUAdQAvAFEAdAAvADUALgAxAC4AMQAvAGMAbABhAG4AZwBfADYANAAvAGUAeABhAG0AcABsAGUAcwAvAHcAaQBkAGcAZQB0AHMALwBtAGEAaQBuAHcAaQBuAGQAbwB3AHMALwBhAHAAcABsAGkAYwBhAHQAaQBvAG4ALwBtAGEAaQBuAHcAaQBuAGQAbwB3AC4AYwBwAHAAAAAmAEMAcABwAEUAZABpAHQAbwByAC4AQwArACsARQBkAGkAdABvAHIAAAAcAAAAAQAAATgAAAAAAAAARwAAAA8AAAABAAAAAA==</value>
+ </data>
+ <data>
+  <variable>OpenEditors</variable>
+  <value type="int">3</value>
+ </data>
+ <data>
+  <variable>ProjectDependencies</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>ProjectList</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">/Users/tadeu/Qt/5.1.1/clang_64/examples/widgets/mainwindows/application/application.pro</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/Users/tadeu/Qt/5.1.1/clang_64/examples/widgets/mainwindows/application/application.pro</value>
+ </data>
+ <data>
+  <variable>value-ActiveMode</variable>
+  <value type="QString">Edit</value>
+ </data>
+ <data>
+  <variable>value-Breakpoints</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>value-DebuggerToolTips</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>value-DefaultFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-ProjectTree.ExpandData</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>value-Watchers</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>valueKeys</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">ActiveMode</value>
+   <value type="QString">Breakpoints</value>
+   <value type="QString">DebuggerToolTips</value>
+   <value type="QString">DefaultFormats</value>
+   <value type="QString">ProjectTree.ExpandData</value>
+   <value type="QString">Watchers</value>
+  </valuelist>
+ </data>
+</qtcreator>

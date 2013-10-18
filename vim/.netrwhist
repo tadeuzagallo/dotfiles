@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/private/tmp/vim-powerline/autoload/Powerline'
-let g:netrw_dirhist_2='/Users/tadeu/www/static/marymilk/source/layouts'
-let g:netrw_dirhist_3='/Users/tadeu/www/static/marymilk-cheff-burger/source/js/controllers'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/tadeu/www/android/cartacuringa/.git'
+let g:netrw_dirhist_2='/Users/tadeu/www/ios/TZLazyKit/TZLazyKit'
+let g:netrw_dirhist_3='/Users/tadeu/www/ios/TZShortKit/TZShortKit'
 let g:netrw_dirhist_4='/Users/tadeu/dotfiles'
-let g:netrw_dirhist_5='/private/tmp/XVim/XVim.xcodeproj'
+let g:netrw_dirhist_5='/Users/tadeu/www/ascii.js'
+let g:netrw_dirhist_6='/Users/tadeu/dotfiles/vim'
