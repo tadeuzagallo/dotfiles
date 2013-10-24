@@ -1,6 +1,8 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+export KEYTIMEOUT=1
+
+#. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 #
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
@@ -29,7 +31,7 @@ export ZSH_THEME="../../my-custom"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git brew node npm osx ruby rails vi-mode)
-plugins=(git vi-mode)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,6 +62,7 @@ fi
 #export CC=gcc
 
 unsetopt nomatch
+unsetopt correct_all
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
@@ -72,4 +75,7 @@ source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/r22.0.1
+
+bindkey -v
