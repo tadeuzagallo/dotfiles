@@ -107,7 +107,6 @@ nnoremap <silent><leader>x <C-w>s
 nnoremap <silent><leader>b :Gblame<cr>
 nnoremap <silent><leader>a :Gwrite<CR>
 nnoremap <silent><leader>o :Gread<CR>
-nnoremap <silent><leader>r :Git reset % <CR>
 nnoremap <silent><leader>s :Gstatus<CR>
 nnoremap <silent><leader>c :Gcommit<CR>
 
@@ -118,9 +117,11 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " Tabular
 if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
+  nmap <Leader>= :Tabularize /=<CR>
+  vmap <Leader>= :Tabularize /=<CR>
+  nmap <Leader>; :Tabularize /:\zs<CR>
+  vmap <Leader>; :Tabularize /:\zs<CR>
 endif
 
+" Redraw
+nnoremap <silent><leader>r :redraw!<CR>
