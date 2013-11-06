@@ -51,6 +51,8 @@ alias mm='middleman'
 alias e='exit'
 alias l='ls -la'
 
+alias xcopen='~/dotfiles/xcopen.sh'
+
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
 

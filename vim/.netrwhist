@@ -1,10 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/tadeu/www/android/cartacuringa/.git'
-let g:netrw_dirhist_2='/Users/tadeu/www/ios/TZLazyKit/TZLazyKit'
-let g:netrw_dirhist_3='/Users/tadeu/www/ios/TZShortKit/TZShortKit'
-let g:netrw_dirhist_4='/Users/tadeu/dotfiles'
-let g:netrw_dirhist_5='/Users/tadeu/www/ascii.js'
-let g:netrw_dirhist_6='/Users/tadeu/dotfiles/vim'
-let g:netrw_dirhist_7='/Users/tadeu/www/rails/gems/sibilant-rails/lib/sibilant'
-let g:netrw_dirhist_8='/Users/tadeu/www/javascript/sibilant'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/tadeu/www/ios/TZQueryKit/Pods'
+let g:netrw_dirhist_2='/Users/tadeu/www/cpp/math_compiler/src'
