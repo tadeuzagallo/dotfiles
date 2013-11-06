@@ -55,6 +55,9 @@ function! OmniComplete()
 endfunction
 
 inoremap jj <Esc>
+inoremap kk <Esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
 inoremap <Nul> <C-R>=CleverTab()<CR>
 
 " FROM https://github.com/jgoulah/dotfiles/blob/master/vimrc#L178
