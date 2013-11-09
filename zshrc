@@ -37,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #export PATH=$PATH:/usr/local/bin:/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/Users/tadeu/.rvm/bin:/usr/local/bin:/usr/local/sbin:/Users/tadeu/.rvm/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 export CLASSPATH=~/www/coursera/Algorithms\ I/algs4.jar:~/www/coursera/Algorithms\ I/stdlib.jar:.
 
