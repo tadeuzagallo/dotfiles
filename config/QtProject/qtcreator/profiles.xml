@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProfiles>
-<!-- Written by QtCreator 2.8.1, 2013-10-16T11:40:47. -->
+<!-- Written by QtCreator 3.0.0, 2013-12-19T12:06:57. -->
 <qtcreator>
  <data>
   <variable>Profile.0</variable>
@@ -8,30 +8,74 @@
    <value type="bool" key="PE.Profile.AutoDetected">true</value>
    <valuemap type="QVariantMap" key="PE.Profile.Data">
     <value type="QString" key="Android.GdbServer.Information"></value>
-    <valuemap type="QVariantMap" key="Debugger.Information">
-     <value type="QString" key="Binary">/usr/bin/gdb</value>
-     <value type="int" key="EngineType">1</value>
-    </valuemap>
+    <value type="QString" key="Debugger.Information">{9e6dc806-f1ac-4250-a327-532709091e6a}</value>
     <value type="QString" key="PE.Profile.Device">Desktop Device</value>
     <value type="QByteArray" key="PE.Profile.DeviceType">Desktop</value>
     <value type="QString" key="PE.Profile.SysRoot"></value>
     <value type="QString" key="PE.Profile.ToolChain">ProjectExplorer.ToolChain.Clang:{86cc8238-fdb8-4f30-8f9b-b2921d9f10ac}</value>
     <value type="QString" key="QtPM4.mkSpecInformation"></value>
-    <value type="QString" key="QtSupport.QtInformation">SDK.qt.511.clang_64.essentials</value>
+    <value type="QString" key="QtSupport.QtInformation">SDK.qt.520.clang_64.essentials</value>
    </valuemap>
    <value type="QString" key="PE.Profile.Icon">:///DESKTOP///</value>
-   <value type="QString" key="PE.Profile.Id">qt.511.clang_64.essentials_kit</value>
-   <value type="QString" key="PE.Profile.Name">Desktop Qt 5.1.1 clang 64bit</value>
+   <value type="QString" key="PE.Profile.Id">qt.520.clang_64.essentials_kit</value>
+   <valuelist type="QVariantList" key="PE.Profile.MutableInfo"/>
+   <value type="QString" key="PE.Profile.Name">Desktop Qt 5.2.0 clang 64bit</value>
    <value type="bool" key="PE.Profile.SDK">true</value>
   </valuemap>
  </data>
  <data>
+  <variable>Profile.1</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="PE.Profile.AutoDetected">true</value>
+   <valuemap type="QVariantMap" key="PE.Profile.Data">
+    <value type="QString" key="Android.GdbServer.Information"></value>
+    <value type="QString" key="Debugger.Information">{3d5f5049-553a-46a6-ab1d-178cfe22fccc}</value>
+    <value type="QString" key="PE.Profile.Device"></value>
+    <value type="QString" key="PE.Profile.DeviceType">Ios.Device.Type</value>
+    <value type="QString" key="PE.Profile.SysRoot">/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk</value>
+    <value type="QString" key="PE.Profile.ToolChain">ProjectExplorer.ToolChain.Clang:{a9578ae6-db81-4855-b79e-69c126743530}</value>
+    <value type="QString" key="QtPM4.mkSpecInformation"></value>
+    <value type="int" key="QtSupport.QtInformation">6</value>
+   </valuemap>
+   <value type="QString" key="PE.Profile.Icon">:/ios/images/iossettings.png</value>
+   <value type="QString" key="PE.Profile.Id">{2a84827c-3f64-4b27-8631-3f64802424cb}</value>
+   <valuelist type="QVariantList" key="PE.Profile.MutableInfo">
+    <value type="QString">PE.Profile.Device</value>
+   </valuelist>
+   <value type="QString" key="PE.Profile.Name">iphoneos-clang Qt 5.2.0 for iOS</value>
+   <value type="bool" key="PE.Profile.SDK">false</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>Profile.2</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="PE.Profile.AutoDetected">true</value>
+   <valuemap type="QVariantMap" key="PE.Profile.Data">
+    <value type="QString" key="Android.GdbServer.Information"></value>
+    <value type="QString" key="Debugger.Information">{3d5f5049-553a-46a6-ab1d-178cfe22fccc}</value>
+    <value type="QString" key="PE.Profile.Device">iOS Simulator Device </value>
+    <value type="QString" key="PE.Profile.DeviceType">Ios.Simulator.Type</value>
+    <value type="QString" key="PE.Profile.SysRoot">/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk</value>
+    <value type="QString" key="PE.Profile.ToolChain">ProjectExplorer.ToolChain.Clang:{d7553e77-0849-4f20-9511-6288cdabb5c4}</value>
+    <value type="QString" key="QtPM4.mkSpecInformation"></value>
+    <value type="int" key="QtSupport.QtInformation">6</value>
+   </valuemap>
+   <value type="QString" key="PE.Profile.Icon">:/ios/images/iossettings.png</value>
+   <value type="QString" key="PE.Profile.Id">{9f964ea4-70fc-4007-abf7-13465534efc9}</value>
+   <valuelist type="QVariantList" key="PE.Profile.MutableInfo">
+    <value type="QString">PE.Profile.Device</value>
+   </valuelist>
+   <value type="QString" key="PE.Profile.Name">iphonesimulator-clang Qt 5.2.0 for iOS</value>
+   <value type="bool" key="PE.Profile.SDK">false</value>
+  </valuemap>
+ </data>
+ <data>
   <variable>Profile.Count</variable>
-  <value type="int">1</value>
+  <value type="int">3</value>
  </data>
  <data>
   <variable>Profile.Default</variable>
-  <value type="QString">qt.511.clang_64.essentials_kit</value>
+  <value type="QString">qt.520.clang_64.essentials_kit</value>
  </data>
  <data>
   <variable>Version</variable>
