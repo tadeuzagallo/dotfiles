@@ -1,4 +1,3 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 export KEYTIMEOUT=1
 
@@ -36,14 +35,13 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-#export PATH=$PATH:/usr/local/bin:/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=/Users/tadeu/.rvm/bin:/usr/local/bin:/usr/local/sbin:/Users/tadeu/.rvm/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 export CLASSPATH=~/www/coursera/Algorithms\ I/algs4.jar:~/www/coursera/Algorithms\ I/stdlib.jar:.
 
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias ev='vim ~/.vimrc'
+alias et='vim ~/.tmux.conf'
 
 alias g='git'
 alias v='vim'
@@ -69,7 +67,6 @@ unsetopt correct_all
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
-PATH=$PATH:$HOME/.rvm/bin:/usr/local/share/npm/bin # Add RVM to PATH for scripting
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export NODE_ENV=development
 
@@ -77,8 +74,10 @@ source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/r22.0.1
 
 bindkey -v
+
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
