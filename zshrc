@@ -75,7 +75,8 @@ source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
 ### Added by the Heroku Toolbelt
 
-export ANDROID_HOME=/usr/local/Cellar/android-sdk/r22.0.1
+export ANDROID_HOME=/usr/local/Cellar/android-sdk/22.3
+export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r9b
 
 bindkey -v
 
