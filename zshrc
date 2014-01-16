@@ -80,5 +80,5 @@ export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r9b
 
 bindkey -v
 
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin:$NODE_PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
