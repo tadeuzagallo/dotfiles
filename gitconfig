@@ -16,6 +16,10 @@
   head = log -1
   pom = push origin master
   phm = push heroku master
+  rao = remote add origin
+  pr = pull --rebase
+  pt = push --tags
+  sn = show --name-only
   lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
   lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --abbrev-commit
   l = !"git lg1"
@@ -24,5 +28,7 @@
 
 [core]
 	excludesfile = /Users/tadeu/.global_ignore
+	autocrlf = input
 [push]
 	default = simple
+[url "https://"]

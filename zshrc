@@ -70,6 +70,8 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export NODE_ENV=development
 
+export GOPATH=~/www/go/
+
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
@@ -80,5 +82,14 @@ export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r9b
 
 bindkey -v
 
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin:$NODE_PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:./node_modules/.bin
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+source $(brew --prefix nvm)/nvm.sh
+
+. `brew --prefix`/etc/profile.d/z.sh
+
+# reload current path to call rvm cd hook
+cd ..;1

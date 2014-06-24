@@ -1,19 +1,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "vim/bundle/clang_complete"]
-	path = vim/bundle/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete
-[submodule "vim/bundle/clang_complete-getopts-ios"]
-	path = vim/bundle/clang_complete-getopts-ios
-	url = https://github.com/tokorom/clang_complete-getopts-ios
-[submodule "vim/bundle/cocoa.vim"]
-	path = vim/bundle/cocoa.vim
-	url = https://github.com/msanders/cocoa.vim
-  ignore = dirty
-[submodule "vim/bundle/kiwi.vim"]
-	path = vim/bundle/kiwi.vim
-	url = https://github.com/vim-scripts/kiwi.vim
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
@@ -23,12 +10,6 @@
 [submodule "vim/bundle/vim-haml"]
 	path = vim/bundle/vim-haml
 	url = https://github.com/tpope/vim-haml
-[submodule "vim/bundle/vim-ios"]
-	path = vim/bundle/vim-ios
-	url = https://github.com/eraserhd/vim-ios
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
 [submodule "vim/bundle/vim-jquery"]
 	path = vim/bundle/vim-jquery
 	url = https://github.com/itspriddle/vim-jquery
@@ -53,18 +34,9 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = https://github.com/vim-scripts/UltiSnips
-[submodule "vim/bundle/vim-objc"]
-	path = vim/bundle/vim-objc
-	url = https://github.com/b4winckler/vim-objc
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = https://github.com/benmills/vimux
-[submodule "vim/bundle/javacomplete"]
-	path = vim/bundle/javacomplete
-	url = https://github.com/vim-scripts/javacomplete
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.vim
@@ -74,6 +46,18 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/bundle/vim-clojure"]
-	path = vim/bundle/vim-clojure
-	url = https://github.com/vim-scripts/VimClojure
+[submodule "vim/bundle/jsx.vim"]
+	path = vim/bundle/jsx.vim
+	url = https://github.com/jsx/jsx.vim
+[submodule "vim/bundle/vim-rspec"]
+	path = vim/bundle/vim-rspec
+	url = https://github.com/skwp/vim-rspec
+[submodule "vim/bundle/vim-javascript-syntax"]
+	path = vim/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax
+[submodule "vim/bundle/jshint.vim"]
+	path = vim/bundle/jshint.vim
+	url = https://github.com/walm/jshint.vim
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json

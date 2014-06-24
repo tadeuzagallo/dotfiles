@@ -1,6 +1,8 @@
 let mapleader=","
 
-set encoding=utf-8
+set backupdir=/tmp
+set directory=/tmp
+
 cmap w!! %!sudo tee > /dev/null %
 let g:Powerline_symbols = 'fancy'
 
@@ -58,7 +60,7 @@ inoremap jj <Esc>
 inoremap kk <Esc>
 inoremap jk <Esc>
 inoremap kj <Esc>
-inoremap <Nul> <C-R>=CleverTab()<CR>
+inoremap <Tab> <C-R>=CleverTab()<CR>
 
 " FROM https://github.com/jgoulah/dotfiles/blob/master/vimrc#L178
 
@@ -128,3 +130,17 @@ endif
 
 " Redraw
 nnoremap <silent><leader>r :redraw!<CR>
+
+function! Run(cmd)
+  let filename = expand('%')
+  exe 'vnew'
+  let cmd =  'r!' . a:cmd . ' ' . filename
+  exe 'r! echo ' . a:cmd . ' ' . filename . '\\n'
+  exe cmd
+endfunction
+
+nnoremap <C-m>n :call Run('node')<CR>
+
+set splitright
+set incsearch
+:nmap vf :vertical belowright wincmd f<CR>
