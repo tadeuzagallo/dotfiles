@@ -1,20 +1,57 @@
 let mapleader=","
 
-set backupdir=/tmp
-set directory=/tmp
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/vimproc.vim', { 'build': { 'mac' : 'make -f make_mac.mak'  } }
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'jsx/jsx.vim'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 let g:Powerline_symbols = 'fancy'
 
 set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
-set ic
-set ai
-
-filetype plugin indent on
 syntax enable
 color railscasts
 
-set nocompatible
+set backupdir=/tmp
+set directory=/tmp
+set ignorecase
 set expandtab
 set smarttab
 set smartindent
@@ -22,17 +59,15 @@ set autoindent
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-
 set number
 set cursorline
 set linespace=4
 set laststatus=2
-set colorcolumn=81
-
+set colorcolumn=80
+set splitright
+set incsearch
+set foldmethod=marker
 set pastetoggle=<f2>
-nnoremap <F4> :Kwbd<CR>
-nnoremap <F5> :buffers<CR>:buffer<Space>
-nnoremap <silent> <F8> mmgg=G'm^
 
 function! CleverTab()
   if pumvisible()
@@ -45,65 +80,50 @@ function! CleverTab()
   endif
 endfunction
 
-function! OmniComplete()
-  if exists('&omnifunc') && &omnifunc != ''
-    return "\<C-X>\<C-O>"
-  endif
-endfunction
-
 inoremap jj <Esc>
 inoremap kk <Esc>
 inoremap jk <Esc>
 inoremap kj <Esc>
 inoremap <Tab> <C-R>=CleverTab()<CR>
 
-" FROM https://github.com/jgoulah/dotfiles/blob/master/vimrc#L178
+nnoremap <F4> :Kwbd<CR>
+nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <silent> <F8> mmgg=G'm^
 
-" ,w to open a split window and switch to it
-nnoremap <leader>w <C-w>v<C-w>l
-" use <F6> to cycle through split windows
 nnoremap <F6> <C-W>w
-" <Shift>+<F6> to cycle backwards
 nnoremap <S-F6> <C-W>W
 
-" remap leader to comma 
-let mapleader=","
+nnoremap <silent>` :Errors<CR>
+nnoremap <leader><leader> :
+nnoremap <silent><leader>q :q<cr>
+nnoremap <silent><leader>w :w<cr>
+nnoremap <silent><leader>r :redraw!<CR>
 
-" map jj to escape key
-inoremap jj <ESC>
-
-vmap  o  :call NERDComment(1, 'toggle')<CR>
-vmap  O  :call NERDComment(1, 'toggle')<CR>
+cabbrev ! VimProcBang
+nnoremap <leader>1 :VimProcBang 
 
 vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-nnoremap <leader>f :CtrlP<cr>
 
-" vim-ios
-nnoremap <leader>s :A<CR>
-nnoremap <leader>j :R<CR>
+"unite
+
+let g:unite_source_history_yank_enable = 1
+
+nnoremap <C-/> :Unite line<cr>
+nnoremap <C-f> :Unite file_rec/async<cr>
+nnoremap <space>/ :Unite grep:.<cr>
+nnoremap <space>y :Unite history/yank<cr>
+nnoremap <space>s :Unite -quick-match buffer<cr>
 
 "syntastic
 
 let g:syntastic_enable_signs=1
-
 let g:syntastic_objc_config_file = ".clang_complete"
 
 set statusline+=%#warningmsg# 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-nnoremap <silent>` :Errors<CR>
-
-
-" cocoa.vim
-
-nnoremap <silent> <leader>l :ListMethods<CR>
 
 " vim-fugitive
-nnoremap <leader><leader> :
-nnoremap <silent><leader>q :q<cr>
-nnoremap <silent><leader>w :w<cr>
-nnoremap <silent><leader>v <C-w>v
-nnoremap <silent><leader>x <C-w>s
 nnoremap <silent><leader>b :Gblame<cr>
 nnoremap <silent><leader>a :Gwrite<CR>
 nnoremap <silent><leader>o :Gread<CR>
@@ -111,9 +131,11 @@ nnoremap <silent><leader>s :Gstatus<CR>
 nnoremap <silent><leader>c :Gcommit<CR>
 
 " NerdTREE
-noremap <silent><leader><tab> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd vimenter * if !argc() | NERDTree | endif
+if exists(":NERDTree")
+  noremap <silent><leader><tab> :NERDTreeToggle<CR>
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  autocmd vimenter * if !argc() | NERDTree | endif
+endif
 
 " Tabular
 if exists(":Tabularize")
@@ -122,30 +144,3 @@ if exists(":Tabularize")
   nmap <Leader>; :Tabularize /:\zs<CR>
   vmap <Leader>; :Tabularize /:\zs<CR>
 endif
-
-" Redraw
-nnoremap <silent><leader>r :redraw!<CR>
-
-function! Run(cmd)
-  let filename = expand('%')
-  let cmd =  a:cmd . ' ' . filename
-  let l = system(cmd)
-
-  exe 'vnew'
-  exe 'normal i'.cmd."\r\r"
-  exe 'normal a'.l
-
-  redraw!
-endfunction
-
-nnoremap <C-m>n :call Run('node')<CR>:q!
-
-set splitright
-set incsearch
-nmap vf :vertical belowright wincmd f<CR>
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules',
-  \ }
-
-set fdm=marker
