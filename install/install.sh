@@ -13,8 +13,7 @@ original_path() {
 
 source $dir/dependencies.txt
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
 cp $dir/tmux-vim-select-pane /usr/local/bin
 chmod +x /usr/local/bin/tmux-vim-select-pane
@@ -24,7 +23,7 @@ cp ./Source+Code+Pro+Regular+for+Powerline.otf ~/Library/Fonts &> /dev/null
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
 cp ./RailsCasts.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
 
-for file in config gitconfig oh-my-zsh tmux.conf vim vimrc xvimrc zshrc zsh-syntax-highlighting zsh-history-substring-search
+for file in config gitconfig oh-my-zsh tmux.conf vim vimrc xvimrc zshrc
 do
   link=$(link_path $file)
   original=$(original_path $file)

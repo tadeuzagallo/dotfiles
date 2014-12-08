@@ -1,42 +1,17 @@
-
 export KEYTIMEOUT=1
 
 #. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
-#
-# Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 export ZSH_THEME="../../my-custom"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want disable red dots displayed while waiting for completion
-# DISABLE_COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git brew node npm osx ruby rails vi-mode)
-plugins=(git)
+plugins=(git brew npm history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
-export CLASSPATH=~/www/coursera/Algorithms\ I/algs4.jar:~/www/coursera/Algorithms\ I/stdlib.jar:.
 
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
@@ -69,15 +44,7 @@ export NODE_ENV=development
 
 export GOPATH=~/www/go
 
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
-
-### Added by the Heroku Toolbelt
-
-export ANDROID_HOME=/usr/local/Cellar/android-sdk/22.3
-export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r9b
-
-bindkey -v
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:./node_modules/.bin:$GOPATH/bin
 
@@ -91,3 +58,20 @@ source $(brew --prefix nvm)/nvm.sh
 
 # reload current path to call rvm cd hook
 cd ..;1
+
+bindkey -v
+
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
+
+bindkey -M vicmd '^P' history-substring-search-up
+bindkey -M vicmd '^N' history-substring-search-down
+
+function zle-line-init zle-keymap-select {
+  VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
