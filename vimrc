@@ -32,6 +32,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'Valloric/YouCompleteMe'
 
 call neobundle#end()
 
@@ -42,9 +43,9 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
-set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+" set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 syntax enable
 color railscasts
@@ -122,6 +123,11 @@ let g:syntastic_objc_config_file = ".clang_complete"
 set statusline+=%#warningmsg# 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" YouCompleteMe
+
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 " vim-fugitive
 nnoremap <silent><leader>b :Gblame<cr>
