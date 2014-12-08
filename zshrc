@@ -46,11 +46,8 @@ alias et='vim ~/.tmux.conf'
 alias g='git'
 alias v='vim'
 alias c='clear'
-alias mm='middleman'
 alias e='exit'
 alias l='ls -la'
-
-alias xcopen='~/dotfiles/xcopen.sh'
 
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
@@ -70,7 +67,7 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export NODE_ENV=development
 
-export GOPATH=~/www/go/
+export GOPATH=~/www/go
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
@@ -82,12 +79,13 @@ export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r9b
 
 bindkey -v
 
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:./node_modules/.bin
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:./node_modules/.bin:$GOPATH/bin
+
+source $(brew --prefix nvm)/nvm.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
-source $(brew --prefix nvm)/nvm.sh
 
 . `brew --prefix`/etc/profile.d/z.sh
 

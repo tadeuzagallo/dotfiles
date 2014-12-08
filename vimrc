@@ -3,15 +3,10 @@ let mapleader=","
 set backupdir=/tmp
 set directory=/tmp
 
-cmap w!! %!sudo tee > /dev/null %
 let g:Powerline_symbols = 'fancy'
 
 set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
-call pathogen#infect()
-call pathogen#helptags()
-
-set clipboard+=unnamed
 set ic
 set ai
 
@@ -133,14 +128,24 @@ nnoremap <silent><leader>r :redraw!<CR>
 
 function! Run(cmd)
   let filename = expand('%')
+  let cmd =  a:cmd . ' ' . filename
+  let l = system(cmd)
+
   exe 'vnew'
-  let cmd =  'r!' . a:cmd . ' ' . filename
-  exe 'r! echo ' . a:cmd . ' ' . filename . '\\n'
-  exe cmd
+  exe 'normal i'.cmd."\r\r"
+  exe 'normal a'.l
+
+  redraw!
 endfunction
 
-nnoremap <C-m>n :call Run('node')<CR>
+nnoremap <C-m>n :call Run('node')<CR>:q!
 
 set splitright
 set incsearch
-:nmap vf :vertical belowright wincmd f<CR>
+nmap vf :vertical belowright wincmd f<CR>
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'node_modules',
+  \ }
+
+set fdm=marker

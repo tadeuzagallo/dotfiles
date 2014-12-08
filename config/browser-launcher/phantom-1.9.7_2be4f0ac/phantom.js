@@ -1,1 +1,0 @@
-(new WebPage).open("http://localhost:50867/__testling?show=true",function(){})
