@@ -33,6 +33,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'bling/vim-airline'
 
 call neobundle#end()
 
@@ -42,10 +43,6 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
-
-" let g:Powerline_symbols = 'fancy'
-
-" set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 syntax enable
 color railscasts
