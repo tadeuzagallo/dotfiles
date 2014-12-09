@@ -108,6 +108,7 @@ vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 "unite
 
 let g:unite_source_history_yank_enable = 1
+let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
 
 nnoremap <C-d> :Unite -start-insert line<cr>
 nnoremap <C-f> :<C-u>Unite -start-insert file_rec/async:!<CR>
