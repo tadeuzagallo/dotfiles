@@ -109,11 +109,11 @@ vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 
 let g:unite_source_history_yank_enable = 1
 
-nnoremap <C-d> :Unite line<cr>
-nnoremap <C-f> :Unite file_rec/async<cr>
+nnoremap <C-d> :Unite -start-insert line<cr>
+nnoremap <C-f> :<C-u>Unite -start-insert file_rec/async:!<CR>
 nnoremap <space>/ :Unite grep:.<cr>
-nnoremap <space>y :Unite history/yank<cr>
-nnoremap <space>s :Unite -quick-match buffer<cr>
+nnoremap <space>y :Unite -start-insert history/yank<cr>
+nnoremap <space>s :Unite -quick-match -start-insert buffer<cr>
 
 "syntastic
 
