@@ -13,13 +13,9 @@ original_path() {
 
 source $dir/dependencies.txt
 
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-
 cp $dir/tmux-vim-select-pane /usr/local/bin
 chmod +x /usr/local/bin/tmux-vim-select-pane
 
-mkdir -p ~/Library/Fonts &> /dev/null
-cp ./Source+Code+Pro+Regular+for+Powerline.otf ~/Library/Fonts &> /dev/null
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
 cp ./RailsCasts.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
 
@@ -33,7 +29,7 @@ do
   if [ -h $link ] || [ ! -e $link ]; then
     rm $link &> /dev/null;
     ln -s $original $link
-  else 
+  else
     while true;
     do
       read -p "File $link already exists. Do you want override it? (y/n)\n" yn

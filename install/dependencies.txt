@@ -1,10 +1,15 @@
-hash brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 chsh -s /bin/zsh
+
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
+hash brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
 brew install tmux
 brew install macvim --env-std --override-system-vim
 brew install reattach-to-user-namespace
-brew install ack
-sudo easy_install pip
-git clone https://github.com/JugglerShu/XVim /tmp && cd /tmp/XVim && open XVim.xcodeproj && cd -
-git clone https://github.com/omz/MiniXcode /tmp && cd /tmp/MiniXcode && open OMMiniXcode.xcodeproj && cd -
-curl -L https://get.rvm.io | bash -s stable --rails
+brew install the_silver_searcher
+brew install nvm
+
+nvm install stable
+
+git clone https://github.com/JugglerShu/XVim /tmp && cd /tmp/XVim && make && cd -
