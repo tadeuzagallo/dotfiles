@@ -34,6 +34,8 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
@@ -98,7 +100,7 @@ nnoremap <silent><leader>w :w<cr>
 nnoremap <silent><leader>r :redraw!<CR>
 
 cabbrev ! VimProcBang
-nnoremap <leader>1 :VimProcBang 
+nnoremap <leader>1 :VimProcBang
 
 vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
@@ -118,7 +120,7 @@ nnoremap <space>s :Unite -quick-match -start-insert buffer<cr>
 let g:syntastic_enable_signs=1
 let g:syntastic_objc_config_file = ".clang_complete"
 
-set statusline+=%#warningmsg# 
+set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -135,11 +137,10 @@ nnoremap <silent><leader>s :Gstatus<CR>
 nnoremap <silent><leader>c :Gcommit<CR>
 
 " NerdTREE
-if exists(":NERDTree")
-  noremap <silent><leader><tab> :NERDTreeToggle<CR>
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-  autocmd vimenter * if !argc() | NERDTree | endif
-endif
+
+noremap <silent><leader><tab> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * if !argc() | NERDTree | endif
 
 " Tabular
 if exists(":Tabularize")
