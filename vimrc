@@ -70,22 +70,10 @@ set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
 
-function! CleverTab()
-  if pumvisible()
-    return "\<C-N>"
-  endif
-  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-    return "\<Tab>"
-  else
-    return "\<C-N>"
-  endif
-endfunction
-
 inoremap jj <Esc>
 inoremap kk <Esc>
 inoremap jk <Esc>
 inoremap kj <Esc>
-inoremap <Tab> <C-R>=CleverTab()<CR>
 
 nnoremap <F4> :Kwbd<CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -134,7 +122,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " YouCompleteMe
-
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 
