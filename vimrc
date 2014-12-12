@@ -1,5 +1,3 @@
-let mapleader=","
-
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
@@ -40,15 +38,18 @@ NeoBundle 'scrooloose/nerdtree'
 call neobundle#end()
 
 " Required:
-filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+let mapleader=","
+
+filetype plugin indent on
 syntax enable
 color railscasts
 
+set timeoutlen=100 ttimeoutlen=0
 set backupdir=/tmp
 set directory=/tmp
 set ignorecase
