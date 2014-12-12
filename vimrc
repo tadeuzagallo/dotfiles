@@ -100,6 +100,9 @@ nnoremap <silent><leader>q :q<cr>
 nnoremap <silent><leader>w :w<cr>
 nnoremap <silent><leader>r :redraw!<CR>
 
+nnoremap <silent><leader>v <C-w>v<C-w>l
+nnoremap <silent><leader>s <C-w>v<C-w>j
+
 cabbrev ! VimProcBang
 nnoremap <leader>1 :VimProcBang
 
@@ -110,11 +113,16 @@ vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
 
-nnoremap <C-d> :Unite -start-insert line<cr>
-nnoremap <C-f> :<C-u>Unite -start-insert file_rec/async:!<CR>
+nnoremap <leader>d :Unite -start-insert line<cr>
+nnoremap <leader>f :<C-u>Unite -no-split file_rec/async:!<CR>
 nnoremap <space>/ :Unite grep:.<cr>
-nnoremap <space>y :Unite -start-insert history/yank<cr>
-nnoremap <space>s :Unite -quick-match -start-insert buffer<cr>
+nnoremap <space>y :Unite history/yank<cr>
+nnoremap <space>s :Unite -quick-match buffer<cr>
+
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  nmap <silent><buffer> <esc> <Plug>(unite_exit)
+endfunction
 
 "syntastic
 
@@ -134,14 +142,14 @@ let g:ycm_key_list_previous_completion=[]
 nnoremap <silent><leader>b :Gblame<cr>
 nnoremap <silent><leader>a :Gwrite<CR>
 nnoremap <silent><leader>o :Gread<CR>
-nnoremap <silent><leader>s :Gstatus<CR>
+"nnoremap <silent><leader>s :Gstatus<CR>
 nnoremap <silent><leader>c :Gcommit<CR>
 
 " NerdTREE
 
-noremap <silent><leader><tab> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd vimenter * if !argc() | NERDTree | endif
+"noremap <silent><leader><tab> :NERDTreeToggle<CR>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd vimenter * if !argc() | NERDTree | endif
 
 " Tabular
 if exists(":Tabularize")
