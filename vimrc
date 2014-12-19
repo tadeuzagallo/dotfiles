@@ -34,6 +34,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-markdown'
 
 call neobundle#end()
 
@@ -49,7 +50,7 @@ filetype plugin indent on
 syntax enable
 color railscasts
 
-set timeoutlen=100 ttimeoutlen=0
+set timeoutlen=1000 ttimeoutlen=0
 set backupdir=/tmp
 set directory=/tmp
 set ignorecase
@@ -92,7 +93,6 @@ nnoremap <silent><leader>v <C-w>v<C-w>l
 nnoremap <silent><leader>s <C-w>v<C-w>j
 
 cabbrev ! VimProcBang
-nnoremap <leader>1 :VimProcBang
 
 vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
@@ -111,7 +111,7 @@ autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
   nmap <silent><buffer> <esc> <Plug>(unite_exit)
 endfunction
-
+"
 "syntastic
 
 let g:syntastic_enable_signs=1
@@ -122,10 +122,12 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " YouCompleteMe
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+
+let g:ycm_key_list_select_completion=['<C-n>']
+let g:ycm_key_list_previous_completion=['<C-p>']
 
 " vim-fugitive
+
 nnoremap <silent><leader>b :Gblame<cr>
 nnoremap <silent><leader>a :Gwrite<CR>
 nnoremap <silent><leader>o :Gread<CR>
