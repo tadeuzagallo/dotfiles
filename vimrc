@@ -89,7 +89,7 @@ nnoremap <silent><leader>w :w<cr>
 nnoremap <silent><leader>r :redraw!<CR>
 
 nnoremap <silent><leader>v <C-w>v<C-w>l
-nnoremap <silent><leader>s <C-w>v<C-w>j
+nnoremap <silent><leader>s <C-w>s<C-w>j
 
 cabbrev ! VimProcBang
 
@@ -135,7 +135,7 @@ nnoremap <silent><leader>c :Gcommit<CR>
 
 " NerdTREE
 
-"noremap <silent><leader><tab> :NERDTreeToggle<CR>
+noremap <silent><leader><tab> :NERDTreeToggle<CR>
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "autocmd vimenter * if !argc() | NERDTree | endif
 
