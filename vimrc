@@ -34,6 +34,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'wavded/vim-stylus'
 
 call neobundle#end()
 
@@ -136,7 +137,7 @@ nnoremap <silent><leader>c :Gcommit<CR>
 " NerdTREE
 
 noremap <silent><leader><tab> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "autocmd vimenter * if !argc() | NERDTree | endif
 
 " Tabular
