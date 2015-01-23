@@ -71,12 +71,9 @@ set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
 
-inoremap jj <Esc>
-inoremap kk <Esc>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-nnoremap <F4> :Kwbd<CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <silent> <F8> mmgg=G'm^
 
@@ -92,7 +89,7 @@ nnoremap <silent><leader>r :redraw!<CR>
 nnoremap <silent><leader>v <C-w>v<C-w>l
 nnoremap <silent><leader>s <C-w>s<C-w>j
 
-cabbrev ! VimProcBang
+cabbrev @ VimProcBang
 
 vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
