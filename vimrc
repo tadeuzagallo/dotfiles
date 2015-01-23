@@ -50,6 +50,7 @@ filetype plugin indent on
 syntax enable
 color railscasts
 
+"set t_Co=256
 set timeoutlen=1000 ttimeoutlen=0
 set backupdir=/tmp
 set directory=/tmp
@@ -144,3 +145,23 @@ if exists(":Tabularize")
   nmap <Leader>; :Tabularize /:\zs<CR>
   vmap <Leader>; :Tabularize /:\zs<CR>
 endif
+
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+    if part[0] =~ '\v[%#<]'
+      let expanded_part = fnameescape(expand(part))
+      let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+    endif
+  endfor
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:    ' . a:cmdline)
+  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
+endfunction
