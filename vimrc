@@ -19,7 +19,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc.vim', { 'build': { 'mac' : 'make -f make_mac.mak'  } }
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'jsx/jsx.vim'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'pangloss/vim-javascript'
