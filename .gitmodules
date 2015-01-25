@@ -6,4 +6,4 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "solarized"]
 	path = solarized
-	url = https://github.com/altercation/solarized
+	url = https://github.com/hydrozen/solarized

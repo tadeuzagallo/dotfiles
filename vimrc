@@ -35,7 +35,6 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'wavded/vim-stylus'
-NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -52,8 +51,9 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
-color solarized
+source ~/dotfiles/solarized/vim-colors-solarized/colors/solarized.vim
 
+set noshowmode
 set timeoutlen=1000 ttimeoutlen=0
 set backupdir=/tmp
 set directory=/tmp
