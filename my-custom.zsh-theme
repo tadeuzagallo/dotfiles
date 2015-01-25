@@ -1,10 +1,9 @@
-# the svn plugin has to be activated for this to work.
-RED="%F{001}"
-ORANGE="%F{172}"
-GREEN="%F{034}"
-BLUE="%F{105}"
-YELLOW="%F{185}"
-GREY="%F{246}"
+RED="%F{red}"
+ORANGE="%F{166}"
+GREEN="%F{green}"
+BLUE="%F{blue}"
+YELLOW="%F{yellow}"
+GREY="%F{grey}"
 
 function _git_status() {
   git status | ack -i untr > /dev/null 2>&1

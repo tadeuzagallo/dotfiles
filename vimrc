@@ -35,6 +35,7 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'wavded/vim-stylus'
+NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -45,12 +46,14 @@ call neobundle#end()
 NeoBundleCheck
 
 let mapleader=","
+let g:airline_powerline_fonts = 1
 
 filetype plugin indent on
-syntax enable
-color railscasts
 
-"set t_Co=256
+syntax enable
+set background=dark
+color solarized
+
 set timeoutlen=1000 ttimeoutlen=0
 set backupdir=/tmp
 set directory=/tmp
