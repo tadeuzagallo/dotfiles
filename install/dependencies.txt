@@ -1,7 +1,5 @@
 chsh -s /bin/zsh
 
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-
 hash brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
 brew install tmux

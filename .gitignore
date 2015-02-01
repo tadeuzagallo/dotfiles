@@ -3,3 +3,4 @@
 .swo
 config
 vim/bundle
+!vim/bundle/neobundle.vim
