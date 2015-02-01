@@ -46,6 +46,7 @@ NeoBundleCheck
 
 let mapleader=","
 let g:airline_powerline_fonts = 1
+let g:jsx_ext_required = 0
 
 filetype plugin indent on
 
@@ -54,6 +55,7 @@ set background=dark
 source ~/dotfiles/solarized/vim-colors-solarized/colors/solarized.vim
 
 set noshowmode
+set backspace=indent,eol,start
 set timeoutlen=1000 ttimeoutlen=0
 set backupdir=/tmp
 set directory=/tmp
@@ -118,6 +120,7 @@ endfunction
 
 let g:syntastic_enable_signs=1
 let g:syntastic_objc_config_file = ".clang_complete"
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
