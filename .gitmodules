@@ -4,9 +4,9 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "solarized"]
-	path = solarized
-	url = https://github.com/hydrozen/solarized
 [submodule "vim/bundle/neobundle.vim"]
 	path = vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim.git
+[submodule "solarized"]
+	path = solarized
+	url = https://github.com/tadeuzagallo/solarized
