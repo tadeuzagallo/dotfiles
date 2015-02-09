@@ -14,7 +14,7 @@ cp $dir/tmux-vim-select-pane /usr/local/bin
 chmod +x /usr/local/bin/tmux-vim-select-pane
 
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
-curl https://github.com/ArtSabintsev/Solarized-Dark-for-Xcode/blob/master/Solarized%20Dark%20%40ArtSabintsev.dvtcolortheme > ~/Library/Developer/Xcode/UserData/FontAndColorThemes/SolarizedDark.dvtcolortheme
+curl https://raw.githubusercontent.com/ArtSabintsev/Solarized-Dark-for-Xcode/master/Solarized%20Dark%20@ArtSabintsev.dvtcolortheme > ~/Library/Developer/Xcode/UserData/FontAndColorThemes/SolarizedDark.dvtcolortheme
 
 for file in config gitconfig oh-my-zsh tmux.conf vim xvimrc vimrc zshrc
 do
