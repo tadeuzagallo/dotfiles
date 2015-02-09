@@ -1,7 +1,6 @@
 #!/bin/bash
 
-dir=$(cd "$(dirname "$(readlink "$0")")" && pwd)
-echo $dir
+dir=~/dotfiles
 
 link_path() {
   echo ~/.$1
@@ -11,15 +10,13 @@ original_path() {
   echo "$dir/$1"
 }
 
-source $dir/dependencies.txt
-
 cp $dir/tmux-vim-select-pane /usr/local/bin
 chmod +x /usr/local/bin/tmux-vim-select-pane
 
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
-cp ./RailsCasts.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
+curl https://github.com/ArtSabintsev/Solarized-Dark-for-Xcode/blob/master/Solarized%20Dark%20%40ArtSabintsev.dvtcolortheme > ~/Library/Developer/Xcode/UserData/FontAndColorThemes/SolarizedDark.dvtcolortheme
 
-for file in config gitconfig oh-my-zsh tmux.conf vim vimrc xvimrc zshrc
+for file in config gitconfig oh-my-zsh tmux.conf vim xvimrc vimrc zshrc
 do
   link=$(link_path $file)
   original=$(original_path $file)
@@ -41,7 +38,13 @@ do
   fi
 done
 
+cp ~/dotfiles/fonts/Sauce\ Code\ Powerline\ Regular.otf ~/Library/Fonts
+
 git submodule init
 git submodule update
 
-mkdir -p ~/.gem &>/dev/null
+source $dir/install/dependencies.txt
+
+vim +NeoBundleInstall +qall
+
+~/.vim/bundle/YouCompleteMe/install.sh
