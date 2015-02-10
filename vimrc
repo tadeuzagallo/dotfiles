@@ -52,6 +52,7 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
+let g:solarized_termcolors=16
 source ~/dotfiles/solarized/vim-colors-solarized/colors/solarized.vim
 
 set noshowmode
