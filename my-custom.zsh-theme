@@ -51,4 +51,3 @@ function collapse_pwd {
 }
 
 PROMPT='${BLUE}%n%f${GREY}%f ${GRAY}on%f ${GREEN}$(collapse_pwd)%f$(_bg_jobs)${GREY}$(prompt_char)%f%(?.. %{${RED}%}[%?]%{$reset_color%})${GREY}>%f '
-RPROMPT=""
