@@ -22,7 +22,9 @@ alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias ev='vim ~/.vimrc'
 alias et='vim ~/.tmux.conf'
+alias rn=react-native
 
+alias :e=cd
 alias g='git'
 alias v='vim'
 alias c='clear'
