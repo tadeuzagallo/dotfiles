@@ -79,25 +79,38 @@ set linespace=4
 set laststatus=2
 set colorcolumn=80
 set splitright
+set splitbelow
 set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
 set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
 
 inoremap jk <Esc>
-inoremap kj <Esc>
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <silent> <F8> mmgg=G'm^
 
-nnoremap <F6> <C-W>w
-nnoremap <S-F6> <C-W>W
-
-nnoremap <silent>` :Errors<CR>
-nnoremap <leader><leader> :
+" pane splitting shortcuts
+nnoremap <silent><leader>v :vnew<cr>
+nnoremap <silent><leader>s :new<cr>
 nnoremap <silent><leader>q :q<cr>
 nnoremap <silent><leader>w :w<cr>
 nnoremap <silent><leader>r :redraw!<CR>
+
+" tabs shortcuts
+nnoremap <silent><leader>t :tabnew<cr>
+nmap <silent><C-}> :tabnext<cr>
+nmap <silent><C-{> :tabprev<cr>
+nnoremap <silent><leader>c :tabclose<cr>
+nnoremap <silent><leader>1 :tabnext 1<cr>
+nnoremap <silent><leader>2 :tabnext 2<cr>
+nnoremap <silent><leader>3 :tabnext 3<cr>
+nnoremap <silent><leader>4 :tabnext 4<cr>
+nnoremap <silent><leader>5 :tabnext 5<cr>
+nnoremap <silent><leader>6 :tabnext 6<cr>
+nnoremap <silent><leader>7 :tabnext 7<cr>
+nnoremap <silent><leader>8 :tabnext 8<cr>
+nnoremap <silent><leader>9 :tablast <cr>
 
 " pane navigation
 
@@ -133,7 +146,7 @@ let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
 let g:unite_source_grep_command = 'ag --nocolor --nogroup'
 
 nnoremap <leader>d :Unite -start-insert line<cr>
-nnoremap <leader>f :<C-u>Unite -no-split file_rec/async:!<CR>
+nnoremap <leader>f :execute 'Unite -no-split file_rec/async:'.getcwd()<CR>
 nnoremap <space>/ :Unite grep:.<cr>
 nnoremap <space>y :Unite history/yank<cr>
 nnoremap <space>s :Unite -quick-match buffer<cr>
