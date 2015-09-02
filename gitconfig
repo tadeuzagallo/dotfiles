@@ -6,9 +6,13 @@
   ui = auto
 [alias]
   s = status
+  st = status
   c = commit
+  ci = commit
   co = checkout
+  up = checkout
   d = diff
+  dif = diff
   dc = diff --cached
   ca = commit --amend
   a = add
