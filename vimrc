@@ -19,10 +19,16 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc.vim', { 'build': { 'mac' : 'make -f make_mac.mak'  } }
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'mxw/vim-jsx'
+
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'pangloss/vim-javascript'
+
+NeoBundleLazy 'mxw/vim-jsx', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
+
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'tpope/vim-fugitive'
@@ -84,6 +90,9 @@ set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
 set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
+set spell spelllang=en_us
+
+autocmd BufWritePre * :%s/\s\+$//e
 
 inoremap jk <Esc>
 
@@ -155,35 +164,24 @@ autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
   nmap <silent><buffer> <esc> <Plug>(unite_exit)
 endfunction
-"
+
 "syntastic
 
 let g:syntastic_enable_signs=1
 let g:syntastic_objc_config_file = ".clang_complete"
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+nnoremap <silent>` :Errors<CR>
+nnoremap <silent><leader>` :lclose<CR>
+
 " YouCompleteMe
 
 let g:ycm_key_list_select_completion=['<C-n>']
 let g:ycm_key_list_previous_completion=['<C-p>']
-
-" vim-fugitive
-
-nnoremap <silent><leader>b :Gblame<cr>
-nnoremap <silent><leader>a :Gwrite<CR>
-nnoremap <silent><leader>o :Gread<CR>
-"nnoremap <silent><leader>s :Gstatus<CR>
-nnoremap <silent><leader>c :Gcommit<CR>
-
-" NerdTREE
-
-noremap <silent><leader><tab> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-"autocmd vimenter * if !argc() | NERDTree | endif
 
 " Tabular
 if exists(":Tabularize")
@@ -192,23 +190,3 @@ if exists(":Tabularize")
   nmap <Leader>; :Tabularize /:\zs<CR>
   vmap <Leader>; :Tabularize /:\zs<CR>
 endif
-
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
-function! s:RunShellCommand(cmdline)
-  echo a:cmdline
-  let expanded_cmdline = a:cmdline
-  for part in split(a:cmdline, ' ')
-    if part[0] =~ '\v[%#<]'
-      let expanded_part = fnameescape(expand(part))
-      let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-    endif
-  endfor
-  botright new
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  call setline(1, 'You entered:    ' . a:cmdline)
-  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-  call setline(3,substitute(getline(2),'.','=','g'))
-  execute '$read !'. expanded_cmdline
-  setlocal nomodifiable
-  1
-endfunction
