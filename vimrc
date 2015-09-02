@@ -32,9 +32,12 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'wavded/vim-stylus'
+NeoBundle 'Rip-Rip/clang_complete'
+
+NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
+NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
 
 call neobundle#end()
 
@@ -79,6 +82,7 @@ set splitright
 set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
+set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
 
 inoremap jk <Esc>
 inoremap kj <Esc>
