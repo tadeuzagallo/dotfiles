@@ -95,12 +95,32 @@ nnoremap <silent><leader>q :q<cr>
 nnoremap <silent><leader>w :w<cr>
 nnoremap <silent><leader>r :redraw!<CR>
 
-nnoremap <silent><leader>v <C-w>v<C-w>l
-nnoremap <silent><leader>s <C-w>s<C-w>j
+" pane navigation
 
-cabbrev @ VimProcBang
+function! Navigate(direction)
+  let nr = winnr()
+  exec 'wincmd ' . a:direction
 
-vmap <leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+  if nr == winnr()
+    let nr = tabpagenr()
+
+    if a:direction == 'h' && nr > 1
+      exec 'tabprevious'
+    elseif a:direction == 'l' && tabpagewinnr(nr + 1) > 0
+      exec 'tabnext'
+    endif
+
+    if nr == tabpagenr()
+      let cmd = 'tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR')
+      call system(cmd)
+    endif
+  endif
+endfunction
+
+nnoremap <silent><C-h> :call Navigate('h')<CR>
+nnoremap <silent><C-l> :call Navigate('l')<CR>
+nnoremap <silent><C-k> :call Navigate('k')<CR>
+nnoremap <silent><C-j> :call Navigate('j')<CR>
 
 "unite
 
