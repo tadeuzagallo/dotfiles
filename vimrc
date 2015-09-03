@@ -66,6 +66,8 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 source ~/dotfiles/solarized/vim-colors-solarized/colors/solarized.vim
 
+set mouse=a
+set clipboard=unnamed
 set noshowmode
 set backspace=indent,eol,start
 set timeoutlen=1000 ttimeoutlen=0
@@ -177,6 +179,10 @@ set statusline+=%*
 
 nnoremap <silent>` :Errors<CR>
 nnoremap <silent><leader>` :lclose<CR>
+
+" clang_complete
+
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 " YouCompleteMe
 
