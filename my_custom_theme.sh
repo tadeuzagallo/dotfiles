@@ -1,47 +1,48 @@
-RED="%F{red}"
-ORANGE="%F{166}"
-GREEN="%F{green}"
-BLUE="%F{blue}"
-YELLOW="%F{yellow}"
-GREY="%F{grey}"
+RED="\e[31m"
+ORANGE="\e[33m"
+GREEN="\e[32m"
+BLUE="\e[34m"
+YELLOW="\e[93m"
+BLACK="\e[30m"
+GREY="\e[m"
 
 function _git_status() {
   git status | ack -i untr > /dev/null 2>&1
   if [ $? -eq 0 ]; then
-    echo $RED
+    printf $RED
     return
   fi
 
   git status | ack -i "not sta" > /dev/null 2>&1
   if [ $? -eq 0 ]; then
-    echo $ORANGE
+    printf $ORANGE
     return
   fi
 
   git status | ack -i "to be" > /dev/null 2>&1
   if [ $? -eq 0 ]; then
-    echo $YELLOW
+    printf $YELLOW
     return
   fi
 
-  echo $GREY
+  printf $GREY
 }
 
 function prompt_char {
-  git branch >/dev/null 2>/dev/null && echo "$(_git_status) ±$(git branch | ack '^\*' | sed -E 's/^\* //')%f" && return
-  # hg root >/dev/null 2>/dev/null && echo ' ☿' && return
+  git branch >/dev/null 2>/dev/null && echo " $(_git_status)git[$(git branch | ack '^\*' | sed -E 's/^\* //')]" && return
+  hg root >/dev/null 2>/dev/null && printf " ${GREY}hg[$(hg branch)]" && return
 }
 
 function ssh_connection() {
   if [[ -n $SSH_CONNECTION ]]; then
-    echo "${YELLOW}ssh%f${GREY}:%f"
+    echo "${YELLOW}ssh${GREY}:"
   fi
 }
 
 function _bg_jobs() {
   JC=$(jobs | ack '^\[[0-9]' | wc -l | xargs echo)
   if [ $JC -gt 0 ]; then
-    echo "${GREY}:%f${BLUE}$JC%f"
+    echo "${GREY}:${BLUE}$JC"
   fi
 }
 
@@ -50,4 +51,4 @@ function collapse_pwd {
     echo -n "$(echo $PWD | sed -E 's/\/(.)[^/]+/\/\1/g; s/.$//')$(echo $PWD | sed -E 's/^.+\/([^\/]+)$/\1/g')" | sed 's/\/\//\//g'
 }
 
-PROMPT='${BLUE}%n%f${GREY}%f ${GRAY}on%f ${GREEN}$(collapse_pwd)%f$(_bg_jobs)${GREY}$(prompt_char)%f%(?.. %{${RED}%}[%?]%{$reset_color%})${GREY}>%f '
+PS1="${BLUE}\u${GREY} on ${GREEN}\$(collapse_pwd)\$(_bg_jobs)\$(prompt_char)${GREY}> "
