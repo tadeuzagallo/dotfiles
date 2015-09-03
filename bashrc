@@ -5,6 +5,8 @@ if [ $TERM != 'screen-256color' ]; then
 fi
 
 # colors
+
+export CLICOLOR=1
 source ~/dotfiles/my_custom_theme.sh
 
 # nvm
