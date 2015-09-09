@@ -4,6 +4,16 @@ if [ $TERM != 'screen-256color' ]; then
   tmux new;
 fi
 
+# bash-completion
+
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
+fi
+
+# vi mode
+
+set editing-mode vi
+
 # colors
 
 export CLICOLOR=1
@@ -37,3 +47,4 @@ alias c='clear'
 alias e='exit'
 alias l='ls -la'
 alias :e=cd
+alias ip='ipconfig getifaddr en0'

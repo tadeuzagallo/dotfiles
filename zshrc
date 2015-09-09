@@ -7,11 +7,9 @@ compinit
 
 ZSH=~/.oh-my-zsh
 
-export ZSH_THEME="../../my-custom"
-
 plugins=(git brew history-substring-search)
 
-source $ZSH/oh-my-zsh.sh
+source ~/dotfiles/my_custom_theme.sh
 
 # Customize to your needs...
 
@@ -29,7 +27,6 @@ alias e='exit'
 alias l='ls -la'
 
 export EDITOR=/usr/local/bin/vim
-export REACT_EDITOR=atom
 export VISUAL=/usr/local/bin/vim
 
 if [ $TERM != 'screen-256color' ]; then
@@ -41,14 +38,12 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 unsetopt nomatch
 unsetopt correct_all
 
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export NODE_ENV=development
 
-export GOPATH=~/www/go
-
-source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
+source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 export PATH=/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/devtools/buck/bin:$HOME/.rvm/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$GOPATH/bin:$PATH
 

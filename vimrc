@@ -29,6 +29,7 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
 
+NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'tpope/vim-fugitive'
@@ -36,11 +37,13 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'rdnetto/YCM-Generator'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'wavded/vim-stylus'
-NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'tpope/vim-surround'
+NeoBundle "gilligan/vim-lldb"
 
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
 NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
@@ -91,7 +94,7 @@ set splitbelow
 set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
-set wildignore+=*.o,*.obj,.git,node_modules,_site,*.class,*.zip,*.aux
+set wildignore+=*.o,*.a,*.obj,*/.git/*,*/node_modules/*,*.class,*.zip,*.aux
 set spell spelllang=en_us
 
 autocmd BufWritePre * :%s/\s\+$//e
@@ -170,7 +173,7 @@ endfunction
 "syntastic
 
 let g:syntastic_enable_signs=1
-let g:syntastic_objc_config_file = ".clang_complete"
+"let g:syntastic_objc_config_file = ".clang_complete"
 let g:syntastic_javascript_checkers = ['eslint']
 
 set statusline+=%#warningmsg#
@@ -180,9 +183,19 @@ set statusline+=%*
 nnoremap <silent>` :Errors<CR>
 nnoremap <silent><leader>` :lclose<CR>
 
-" clang_complete
+" ctrl+p
 
-let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+"let g:ctrlp_by_filename=1
+let g:ctrlp_regexp=0
+let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_working_path_mode = 'a'
+
+" filetype format
+
+autocmd BufRead,BufNewFile *.m set filetype=objc
+autocmd BufRead,BufNewFile BUCK set filetype=python
+autocmd FileType markdown setlocal textwidth=80 formatoptions+=t
 
 " YouCompleteMe
 
@@ -196,3 +209,29 @@ if exists(":Tabularize")
   nmap <Leader>; :Tabularize /:\zs<CR>
   vmap <Leader>; :Tabularize /:\zs<CR>
 endif
+
+" switch between source and header
+
+function! Switch()
+  let file = expand('%')
+  let header_pattern = '\.h\(pp\)\{0,1}'
+  let source_pattern = '\(\.c\(pp\)\{0,1}\|\.m\{1,2}\)$'
+  if match(file, source_pattern) > 0
+    let header = substitute(file, source_pattern, '.h', '')
+    execute ":find " header
+  elseif match(file, header_pattern) > 0
+    let source = substitute(file, header_pattern, '.c', '')
+    if findfile(source) == ""
+      let source = substitute(file, header_pattern, '.m', '')
+    endif
+    if findfile(source) == ""
+      let source = substitute(file, header_pattern, '.cpp', '')
+    endif
+    if findfile(source) == ""
+      let source = substitute(file, header_pattern, '.mm', '')
+    endif
+    execute ":edit " findfile(source)
+  endif
+endfunction
+
+nnoremap <silent><C-\> :call Switch()<CR>
