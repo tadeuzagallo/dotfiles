@@ -1,3 +1,5 @@
+export PATH=/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/devtools/buck/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$PATH
+
 export KEYTIMEOUT=1
 
 autoload -U zutil      # [1]
@@ -9,6 +11,7 @@ ZSH=~/.oh-my-zsh
 
 plugins=(git brew history-substring-search)
 
+source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/my_custom_theme.sh
 
 # Customize to your needs...
@@ -38,6 +41,7 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 unsetopt nomatch
 unsetopt correct_all
 
+
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export NODE_ENV=development
 
@@ -45,13 +49,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-export PATH=/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/devtools/buck/bin:$HOME/.rvm/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$GOPATH/bin:$PATH
-
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 bindkey -v
 
