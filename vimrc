@@ -44,6 +44,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'tpope/vim-surround'
 NeoBundle "gilligan/vim-lldb"
+NeoBundle 'rizzatti/dash.vim'
 
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
 NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
@@ -234,4 +235,8 @@ function! Switch()
   endif
 endfunction
 
-nnoremap <silent><C-\> :call Switch()<CR>
+nnoremap <silent><leader><tab> :call Switch()<CR>
+
+" dash.vim
+
+:nmap <silent> <leader>d <Plug>DashSearch
