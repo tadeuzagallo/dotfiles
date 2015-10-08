@@ -191,6 +191,12 @@ let g:ctrlp_regexp=0
 let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_working_path_mode = 'a'
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-n>'],
+    \ 'PrtSelectMove("k")':   ['<c-p>'],
+    \ 'PrtHistory(-1)':       ['<c-j>'],
+    \ 'PrtHistory(1)':        ['<c-k>']
+    \}
 
 " filetype format
 
