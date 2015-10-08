@@ -23,11 +23,11 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
 
-NeoBundleLazy 'mxw/vim-jsx', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'tadeuzagallo/vim-jsx', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'facebook/vim-flow', { 'autoload': { 'filetypes': 'javascript' }}
 
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'digitaltoad/vim-jade'
@@ -240,3 +240,7 @@ nnoremap <silent><leader><tab> :call Switch()<CR>
 " dash.vim
 
 :nmap <silent> <leader>d <Plug>DashSearch
+
+" flow-vim
+
+let g:flow#autoclose = 1
