@@ -1,6 +1,6 @@
 chsh -s /bin/zsh
 
-hash brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+which brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install zsh
 brew install zsh-completions
@@ -14,7 +14,6 @@ brew install the_silver_searcher
 brew install nvm
 brew install wget
 brew install cmake
-brew install z
 
 source ~/.zshrc
 

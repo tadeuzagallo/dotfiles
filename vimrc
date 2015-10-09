@@ -68,6 +68,7 @@ syntax enable
 let g:solarized_termcolors = 16
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+set bg=light
 source ~/dotfiles/solarized/vim-colors-solarized/colors/solarized.vim
 
 set mouse=a
