@@ -1,4 +1,4 @@
-export PATH=/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/devtools/buck/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$PATH
+export PATH=/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/buck/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$PATH
 
 export KEYTIMEOUT=1
 
