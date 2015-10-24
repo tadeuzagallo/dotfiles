@@ -32,8 +32,10 @@ alias l='ls -la'
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
 
+_trap_exit() { tmux kill-session -t $$; }
+trap _trap_exit EXIT
 if [ $TERM != 'screen-256color' ]; then
-  tmux new;
+  tmux new-session -s $$;
 fi
 
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
