@@ -45,6 +45,7 @@ NeoBundle 'wavded/vim-stylus'
 NeoBundle 'tpope/vim-surround'
 NeoBundle "gilligan/vim-lldb"
 NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'zenorocha/dracula-theme', { 'rtp': 'vim/' }
 
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
 NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
@@ -65,11 +66,7 @@ filetype plugin indent on
 
 syntax enable
 
-let g:solarized_termcolors = 16
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-set bg=light
-source ~/dotfiles/solarized/vim-colors-solarized/colors/solarized.vim
+colorscheme dracula
 
 set mouse=a
 set clipboard=unnamed
