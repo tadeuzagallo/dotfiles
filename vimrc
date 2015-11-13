@@ -94,7 +94,14 @@ set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
 set wildignore+=*.o,*.a,*.obj,*/.git/*,*/node_modules/*,*.class,*.zip,*.aux
+
+" spell check
 set spell spelllang=en_us
+hi clear SpellBad
+hi clear SpellCap
+hi clear SpellLocal
+hi clear SpellRare
+hi SpellBad cterm=underline
 
 autocmd BufWritePre * :%s/\s\+$//e
 
