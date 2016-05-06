@@ -34,5 +34,5 @@
 	excludesfile = /Users/tadeu/.global_ignore
 	autocrlf = input
 [push]
-	default = simple
+	default = current
 [url "https://"]
