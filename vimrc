@@ -114,12 +114,12 @@ nnoremap <silent><leader><leader>t :call Trim()<CR>
 
 inoremap jk <Esc>
 
-nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <silent><leader>b :buffers<CR>:buffer<Space>
 nnoremap <silent> <F8> mmgg=G'm^
 
 " pane splitting shortcuts
-nnoremap <silent><leader>v :vnew<cr>
-nnoremap <silent><leader>s :new<cr>
+nnoremap <silent><leader>v :vs<cr>
+nnoremap <silent><leader>s :sp<cr>
 nnoremap <silent><leader>q :q<cr>
 nnoremap <silent><leader>w :w<cr>
 nnoremap <silent><leader>r :redraw!<CR>
@@ -178,7 +178,7 @@ nnoremap <space>/ :Unite grep:.<cr>
 nnoremap <space>y :Unite history/yank<cr>
 nnoremap <space>s :Unite -quick-match buffer<cr>
 
-autocmd FileType unite call s:unite_settings()
+"autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
   nmap <silent><buffer> <esc> <Plug>(unite_exit)
 endfunction
@@ -188,6 +188,8 @@ endfunction
 let g:syntastic_enable_signs=1
 "let g:syntastic_objc_config_file = ".clang_complete"
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
