@@ -21,17 +21,16 @@ NeoBundle 'Shougo/vimproc.vim', { 'build': { 'mac' : 'make -f make_mac.mak'  } }
 NeoBundle 'Shougo/unite.vim'
 
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'terryma/vim-multiple-cursors'
 
 NeoBundleLazy 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'tadeuzagallo/vim-jsx', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
-NeoBundleLazy 'facebook/vim-flow', { 'autoload': { 'filetypes': 'javascript' }}
+NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
 
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'fatih/vim-go'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'SirVer/ultisnips'
@@ -41,7 +40,6 @@ NeoBundle 'rdnetto/YCM-Generator'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'wavded/vim-stylus'
 NeoBundle 'tpope/vim-surround'
 NeoBundle "gilligan/vim-lldb"
 NeoBundle 'rizzatti/dash.vim'
@@ -49,6 +47,8 @@ NeoBundle 'zenorocha/dracula-theme', { 'rtp': 'vim/' }
 
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
 NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
+
+NeoBundle 'neovimhaskell/haskell-vim'
 
 call neobundle#end()
 
