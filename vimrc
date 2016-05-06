@@ -102,8 +102,15 @@ hi clear SpellCap
 hi clear SpellLocal
 hi clear SpellRare
 hi SpellBad cterm=underline
+function! Trim()
+  let lnum = line('.')
+  let cnum = col('.')
+  exe ':%s/\s\+$//e'
+  exe 'normal ' . lnum . 'G'
+  exe 'normal ' . cnum . '|'
+endfunction
 
-autocmd BufWritePre * :%s/\s\+$//e
+nnoremap <silent><leader><leader>t :call Trim()<CR>
 
 inoremap jk <Esc>
 
