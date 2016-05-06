@@ -214,10 +214,7 @@ let g:ctrlp_prompt_mappings = {
 
 " filetype format
 
-autocmd BufRead,BufNewFile *.m set filetype=objc
 autocmd BufRead,BufNewFile BUCK set filetype=python
-autocmd FileType markdown setlocal textwidth=80 formatoptions+=t
-
 " YouCompleteMe
 
 let g:ycm_key_list_select_completion=['<C-n>']
