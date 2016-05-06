@@ -258,7 +258,7 @@ function! Switch()
   endif
 endfunction
 
-nnoremap <silent><leader><tab> :call Switch()<CR>
+nnoremap <silent><leader><leader><tab> :call Switch()<CR>
 
 " dash.vim
 
@@ -267,3 +267,23 @@ nnoremap <silent><leader><tab> :call Switch()<CR>
 " flow-vim
 
 let g:flow#autoclose = 1
+
+" nerdtree
+"
+map <silent> <leader><tab> :NERDTreeToggle<CR>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <leader>z :ZoomToggle<CR>
