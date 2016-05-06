@@ -236,17 +236,20 @@ endif
 function! Switch()
   let file = expand('%')
   let header_pattern = '\.h\(pp\)\{0,1}'
-  let source_pattern = '\(\.c\(pp\)\{0,1}\|\.m\{1,2}\)$'
+  let source_pattern = '\(\.c\(c\|pp\)\{0,1}\|\.m\{1,2}\)$'
   if match(file, source_pattern) > 0
     let header = substitute(file, source_pattern, '.h', '')
     execute ":find " header
   elseif match(file, header_pattern) > 0
     let source = substitute(file, header_pattern, '.c', '')
     if findfile(source) == ""
-      let source = substitute(file, header_pattern, '.m', '')
+      let source = substitute(file, header_pattern, '.cpp', '')
     endif
     if findfile(source) == ""
-      let source = substitute(file, header_pattern, '.cpp', '')
+      let source = substitute(file, header_pattern, '.cc', '')
+    endif
+    if findfile(source) == ""
+      let source = substitute(file, header_pattern, '.m', '')
     endif
     if findfile(source) == ""
       let source = substitute(file, header_pattern, '.mm', '')
