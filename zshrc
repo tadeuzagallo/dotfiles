@@ -28,6 +28,7 @@ alias v='vim'
 alias c='clear'
 alias e='exit'
 alias l='ls -la'
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
@@ -62,7 +63,8 @@ bindkey '^N' history-substring-search-down
 bindkey -M vicmd '^P' history-substring-search-up
 bindkey -M vicmd '^N' history-substring-search-down
 
-alias ip="ipconfig getifaddr en0"
+alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
+alias weather='curl http://wttr.in/london?m'
 
 ###-begin-npm-completion-###
 #
