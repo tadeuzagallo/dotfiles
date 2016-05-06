@@ -119,3 +119,7 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+export ANDROID_SDK=$(brew --prefix android-sdk)
+export ANDROID_NDK=$(brew --prefix android-ndk)
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
