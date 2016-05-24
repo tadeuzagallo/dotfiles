@@ -12,11 +12,6 @@ else
   GREY="\[\033[0m\]"
 fi
 
-function prompt_char {
-  #git branch >/dev/null 2>/dev/null && echo -e " ${BLUE}[git]" && return
-  #hg root >/dev/null 2>/dev/null && echo -e " ${BLUE}[hg]" && return
-}
-
 function ssh_connection() {
   if [[ -n $SSH_CONNECTION ]]; then
     echo -e "${ORANGE}ssh${GREY}:"
@@ -24,10 +19,10 @@ function ssh_connection() {
 }
 
 function _bg_jobs() {
-  #JC=$(jobs | ack '^\[[0-9]' | wc -l | xargs echo)
-  #if [ $JC -gt 0 ]; then
-    #echo -e "${GREY}:${BLUE}$JC"
-  #fi
+  JC=$(jobs | ack '^\[[0-9]' | wc -l | xargs echo)
+  if [ $JC -gt 0 ]; then
+    echo -e "${GREY}:${RED}$JC"
+  fi
 }
 
 function collapse_pwd {
@@ -44,7 +39,7 @@ function username() {
 }
 
 function update_ps1 {
-  PS1="${BLUE}`username`${GREY} on `ssh_connection`${GREEN}`collapse_pwd``prompt_char``_bg_jobs`${GREY}> "
+  PS1="`ssh_connection`${GREEN}`collapse_pwd``_bg_jobs` ${BLUE}λ ${GREY}"
 }
 
 PROMPT_COMMAND=update_ps1
