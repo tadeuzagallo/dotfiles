@@ -30,7 +30,7 @@
   git = "!git"
 
 [core]
-	excludesfile = /Users/tadeu/.global_ignore
+	excludesfile = /Users/tadeuzagallo/.global_ignore
 	autocrlf = input
 [push]
 	default = current
