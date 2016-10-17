@@ -5,7 +5,7 @@ DIR="$PWD"
 popd > /dev/null
 
 link_path() {
-  echo ~/.$1
+  echo ~/."$1"
 }
 
 original_path() {
@@ -13,25 +13,25 @@ original_path() {
 }
 
 rm /usr/local/bin/tmux-vim-select-pane
-ln -s $(original_path tmux-vim-select-pane) /usr/local/bin
+ln -s "$DIR/tmux-vim-select-pane" /usr/local/bin
 chmod +x /usr/local/bin/tmux-vim-select-pane
 
 for file in $(ls rc)
 do
-  link=$(link_path $file)
-  original=$(original_path $file)
+  link="$(link_path "$file")"
+  original="$(original_path "$file")"
 
   echo "$original -> $link"
 
-  if [ -h $link ] || [ ! -e $link ]; then
-    rm $link &> /dev/null;
-    ln -s $original $link
+  if [ -h "$link" ] || [ ! -e "$link" ]; then
+    rm "$link" &> /dev/null;
+    ln -s "$original" "$link"
   else
     while true;
     do
-      read -p "File $link already exists. Do you want override it? [y/n]: " yn
+      read -rp "File $link already exists. Do you want override it? [y/n]: " yn
       case $yn in
-        [Yy]* ) rm -rf $link; ln -s $original $link; break;;
+        [Yy]* ) rm -rf "$link"; ln -s "$original" "$link"; break;;
         [Nn]* ) break;;
       esac
     done
