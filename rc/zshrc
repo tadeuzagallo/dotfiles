@@ -9,7 +9,8 @@ compinit
 
 plugins=(git brew history-substring-search)
 
-source ~/.oh-my-zsh/oh-my-zsh.sh
+ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 source ~/.my_zsh_theme.sh
 
 # Customize to your needs...
