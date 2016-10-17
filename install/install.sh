@@ -36,6 +36,7 @@ do
 done
 
 cp ./fonts/SourceCode-Powerline-Regular.otf ~/Library/Fonts
+curl -L https://github.com/i-tu/Hasklig/releases/download/0.9/Hasklig-0.9.zip > ~/Library/Fonts
 
 git submodule init
 git submodule update
