@@ -41,9 +41,11 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'godlygeek/tabular'
 NeoBundle "gilligan/vim-lldb"
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'zenorocha/dracula-theme', { 'rtp': 'vim/' }
+NeoBundle 'jvoorhis/coq.vim'
 
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
 NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
@@ -284,3 +286,4 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <leader>z :ZoomToggle<CR>
+
