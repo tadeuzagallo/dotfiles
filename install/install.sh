@@ -10,11 +10,8 @@ original_path() {
   echo "$dir/$1"
 }
 
-cp $dir/tmux-vim-select-pane /usr/local/bin
+ln -s $dir/tmux-vim-select-pane /usr/local/bin
 chmod +x /usr/local/bin/tmux-vim-select-pane
-
-mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes &> /dev/null
-curl https://raw.githubusercontent.com/stackia/solarized-xcode/master/Solarized%20Light.dvtcolortheme > ~/Library/Developer/Xcode/UserData/FontAndColorThemes/SolarizedLight.dvtcolortheme
 
 for file in config gitconfig oh-my-zsh tmux.conf vim xvimrc vimrc zshrc bashrc bash_login inputrc
 do
@@ -38,7 +35,7 @@ do
   fi
 done
 
-cp ~/dotfiles/fonts/Sauce\ Code\ Powerline\ Regular.otf ~/Library/Fonts
+cp ./fonts/SourceCode-Powerline-Regular.otf ~/Library/Fonts
 
 git submodule init
 git submodule update
