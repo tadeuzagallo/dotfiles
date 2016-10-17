@@ -44,7 +44,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'godlygeek/tabular'
 NeoBundle "gilligan/vim-lldb"
 NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'zenorocha/dracula-theme', { 'rtp': 'vim/' }
+NeoBundle 'dracula/vim'
 NeoBundle 'jvoorhis/coq.vim'
 
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
@@ -67,6 +67,7 @@ let g:jsx_ext_required = 0
 filetype plugin indent on
 
 syntax enable
+color dracula
 
 set mouse=a
 set clipboard=unnamed
