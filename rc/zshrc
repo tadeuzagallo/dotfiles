@@ -9,6 +9,7 @@ compinit
 
 plugins=(git brew history-substring-search)
 
+# Set ZSH so oh-my-zsh finds its installation
 ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 source ~/.my_zsh_theme.sh

@@ -55,13 +55,13 @@ git submodule update
 which brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install brew dependencies
+brew install macvim --env-std --override-system-vim
 brew install zsh \
              zsh-completions \
              zsh-syntax-highlighting \
              zsh-history-substring-search \
              tmux \
              ack \
-             macvim --env-std --override-system-vim \
              reattach-to-user-namespace \
              the_silver_searcher \
              wget \
