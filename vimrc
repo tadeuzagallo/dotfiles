@@ -95,7 +95,7 @@ set splitbelow
 set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
-set wildignore+=*.o,*.a,*.obj,*/.git/*,*/node_modules/*,*.class,*.zip,*.aux
+set wildignore+=*.o,*.hi,*.a,*.obj,*/.git/*,*/node_modules/*,*.class,*.zip,*.aux
 
 " spell check
 set spell spelllang=en_us
