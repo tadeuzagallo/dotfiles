@@ -28,6 +28,7 @@ alias v='vim'
 alias c='clear'
 alias e='exit'
 alias l='ls -la'
+alias f='ls'
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
 export EDITOR=/usr/local/bin/vim
@@ -123,3 +124,6 @@ export ANDROID_SDK=$(brew --prefix android-sdk)
 export ANDROID_NDK=$(brew --prefix android-ndk)
 export ANDROID_HOME=${ANDROID_SDK}
 export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+
+# OPAM configuration
+. /Users/tadeuzagallo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
