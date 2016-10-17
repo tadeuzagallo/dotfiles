@@ -1,19 +1,22 @@
 #!/bin/bash
 
-dir=~/dotfiles
+pushd $(dirname $0) > /dev/null
+DIR="$PWD"
+popd > /dev/null
 
 link_path() {
   echo ~/.$1
 }
 
 original_path() {
-  echo "./$1"
+  echo "$DIR/rc/$1"
 }
 
-ln -s $dir/tmux-vim-select-pane /usr/local/bin
+rm /usr/local/bin/tmux-vim-select-pane
+ln -s $(original_path tmux-vim-select-pane) /usr/local/bin
 chmod +x /usr/local/bin/tmux-vim-select-pane
 
-for file in config gitconfig oh-my-zsh tmux.conf vim xvimrc vimrc zshrc bashrc bash_login inputrc
+for file in $(ls rc)
 do
   link=$(link_path $file)
   original=$(original_path $file)
@@ -26,9 +29,9 @@ do
   else
     while true;
     do
-      read -p "File $link already exists. Do you want override it? (y/n)\n" yn
+      read -p "File $link already exists. Do you want override it? [y/n]: " yn
       case $yn in
-        [Yy]* ) rm $link; ln -s $original $link; break;;
+        [Yy]* ) rm -rf $link; ln -s $original $link; break;;
         [Nn]* ) break;;
       esac
     done
@@ -37,7 +40,12 @@ done
 
 # link fonts
 cp ./fonts/SourceCode-Powerline-Regular.otf ~/Library/Fonts
-curl -L https://github.com/i-tu/Hasklig/releases/download/0.9/Hasklig-0.9.zip > ~/Library/Fonts
+
+pushd ~/Library/Fonts > /dev/null
+curl -L https://github.com/i-tu/Hasklig/releases/download/v1.0-beta/Hasklig-1.0-Beta.zip > Hasklig.zip
+unzip Hasklig.zip
+rm Hasklig.zip
+popd > /dev/null
 
 # install submodules
 git submodule init
@@ -61,11 +69,11 @@ brew install zsh \
              nvm
 
 # Switch to ZSH
-chsh -s /bin/zsh
+chsh -s /usr/local/bin/zsh
+/usr/local/bin/zsh
 
 # Install the latest stable version of node.js
 nvm install stable
 
 vim +NeoBundleInstall +qall
-
 ~/.vim/bundle/YouCompleteMe/install.sh

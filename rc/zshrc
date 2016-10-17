@@ -7,12 +7,10 @@ autoload -U compinit   # [2]
 autoload -U complist   # [3]
 compinit
 
-ZSH=~/.oh-my-zsh
-
 plugins=(git brew history-substring-search)
 
-source $ZSH/oh-my-zsh.sh
-source ~/dotfiles/my_custom_theme.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/.my_zsh_theme.sh
 
 # Customize to your needs...
 
