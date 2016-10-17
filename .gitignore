@@ -2,6 +2,6 @@
 .swp
 .swo
 config
-vim/bundle
-vim/.netrwhist
-!vim/bundle/neobundle.vim
+rc/vim/bundle
+rc/vim/.netrwhist
+!rc/vim/bundle/neobundle.vim
