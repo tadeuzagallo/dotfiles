@@ -68,8 +68,6 @@ filetype plugin indent on
 
 syntax enable
 
-colorscheme dracula
-
 set mouse=a
 set clipboard=unnamed
 set noshowmode
