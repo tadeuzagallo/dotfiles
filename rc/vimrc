@@ -27,7 +27,6 @@ NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filety
 NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
 
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'SirVer/ultisnips'
@@ -43,6 +42,7 @@ NeoBundle "gilligan/vim-lldb"
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'dracula/vim'
 NeoBundle 'jvoorhis/coq.vim'
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
 NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
@@ -179,20 +179,6 @@ set statusline+=%*
 nnoremap <silent>` :Errors<CR>
 nnoremap <silent><leader>` :lclose<CR>
 
-" ctrl+p
-
-"let g:ctrlp_by_filename=1
-let g:ctrlp_regexp=0
-let g:ctrlp_clear_cache_on_exit=0
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtSelectMove("j")':   ['<c-n>'],
-    \ 'PrtSelectMove("k")':   ['<c-p>'],
-    \ 'PrtHistory(-1)':       ['<c-j>'],
-    \ 'PrtHistory(1)':        ['<c-k>']
-    \}
-
 " filetype format
 
 autocmd BufRead,BufNewFile BUCK set filetype=python
@@ -251,6 +237,9 @@ let g:flow#autoclose = 1
 map <silent> <leader><tab> :NERDTreeToggle<CR>
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" FZF
+nnoremap <silent><C-p> :FZF<CR>
+
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
     if exists('t:zoomed') && t:zoomed
@@ -265,4 +254,3 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <leader>z :ZoomToggle<CR>
-
