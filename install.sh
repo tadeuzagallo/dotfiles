@@ -66,6 +66,7 @@ brew install zsh \
              the_silver_searcher \
              wget \
              cmake \
+             fzf \
              nvm
 
 # Switch to ZSH

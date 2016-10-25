@@ -48,3 +48,5 @@ alias e='exit'
 alias l='ls -la'
 alias :e=cd
 alias ip='ipconfig getifaddr en0'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
