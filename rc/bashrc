@@ -17,7 +17,7 @@ set editing-mode vi
 # colors
 
 export CLICOLOR=1
-source ~/dotfiles/my_custom_theme.sh
+source ~/.my_zsh_theme.sh
 
 # nvm
 
