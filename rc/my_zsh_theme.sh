@@ -38,8 +38,16 @@ function username() {
   fi
 }
 
+# notify_me: http://frantic.im/notify-on-completion
+function f_notifyme {
+  LAST_EXIT_CODE=$?
+  CMD=$(fc -ln -1)
+  # No point in waiting for the command to complete
+  ~/.notify_me "$CMD" "$LAST_EXIT_CODE" &
+}
+
 function update_ps1 {
-  PS1="`ssh_connection`${GREEN}`collapse_pwd``_bg_jobs` ${BLUE}λ ${GREY}"
+  PS1="`f_notifyme``ssh_connection`${GREEN}`collapse_pwd``_bg_jobs` ${BLUE}λ ${GREY}"
 }
 
 PROMPT_COMMAND=update_ps1
