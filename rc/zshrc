@@ -1,3 +1,10 @@
+if [[ "$PROFILE" == "1" ]]; then
+  zmodload zsh/zprof
+  zmodload zsh/datetime
+
+  t0=$EPOCHREALTIME
+fi
+
 export PATH=/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/buck/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$PATH
 
 export KEYTIMEOUT=1
@@ -5,13 +12,18 @@ export KEYTIMEOUT=1
 autoload -U zutil      # [1]
 autoload -U compinit   # [2]
 autoload -U complist   # [3]
-compinit
 
-plugins=(git brew history-substring-search)
+# either git or brew is slow here... ~500ms
+#plugins=(git brew history-substring-search)
+
+plugins=(history-substring-search)
 
 # Set ZSH so oh-my-zsh finds its installation
 ZSH=~/.oh-my-zsh
+
+# !! slow 450ms :(
 source $ZSH/oh-my-zsh.sh
+
 source ~/.my_zsh_theme.sh
 
 # Customize to your needs...
@@ -53,9 +65,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 bindkey -v
 
 bindkey '^P' history-substring-search-up
@@ -67,65 +76,29 @@ bindkey -M vicmd '^N' history-substring-search-down
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 alias weather='curl http://wttr.in/london?m'
 
-###-begin-npm-completion-###
+# !! brew --prefix is slow... 600ms for both calls :(
 #
-# npm command completion script
-#
-# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
-# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
-#
-
-COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
-COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
-export COMP_WORDBREAKS
-
-if type complete &>/dev/null; then
-  _npm_completion () {
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           npm completion -- "${COMP_WORDS[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  complete -F _npm_completion npm
-elif type compdef &>/dev/null; then
-  _npm_completion() {
-    si=$IFS
-    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 npm completion -- "${words[@]}" \
-                 2>/dev/null)
-    IFS=$si
-  }
-  compdef _npm_completion npm
-elif type compctl &>/dev/null; then
-  _npm_completion () {
-    local cword line point words si
-    read -Ac words
-    read -cn cword
-    let cword-=1
-    read -l line
-    read -ln point
-    si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       npm completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  compctl -K _npm_completion npm
-fi
-###-end-npm-completion-###
-export ANDROID_SDK=$(brew --prefix android-sdk)
-export ANDROID_NDK=$(brew --prefix android-ndk)
-export ANDROID_HOME=${ANDROID_SDK}
-export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+# export ANDROID_SDK=$(brew --prefix android-sdk)
+# export ANDROID_NDK=$(brew --prefix android-ndk)
+# export ANDROID_HOME=${ANDROID_SDK}
+# export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
 
 # OPAM configuration
 . /Users/tadeuzagallo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# OCaml
+alias ocaml="ledit ocaml"
+
+export LC_ALL="en_US.UTF-8"
+
+if [[ "$PROFILE" == "1" ]]; then
+  function {
+      t1=$EPOCHREALTIME
+      startup=$(( t1 - t0 ))
+      print "Shell startup time: $startup"
+  }
+  unset t0
+fi
