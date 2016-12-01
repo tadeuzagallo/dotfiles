@@ -46,10 +46,6 @@ function f_notifyme {
   ~/.notify_me "$CMD" "$LAST_EXIT_CODE" &
 }
 
-function update_ps1 {
-  PS1="`f_notifyme``ssh_connection`${GREEN}`collapse_pwd``_bg_jobs` ${BLUE}λ ${GREY}"
-}
+PS1='$(f_notifyme)$(ssh_connection)${GREEN}$(collapse_pwd)$(_bg_jobs) ${BLUE}λ ${GREY}'
 
-PROMPT_COMMAND=update_ps1
-
-[ ${ZSH_VERSION} ] && precmd() { update_ps1; }
+setopt promptsubst
