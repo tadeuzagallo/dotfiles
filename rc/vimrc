@@ -49,6 +49,11 @@ NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
 
 NeoBundle 'neovimhaskell/haskell-vim'
 
+" OCaml
+NeoBundle 'the-lambda-church/merlin', { 'do': './configure && make && make install', 'rtp': '/usr/local/share/ocamlmerlin/vim' }
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'OCamlPro/ocp-indent'
+
 call neobundle#end()
 
 " Required:
@@ -126,7 +131,7 @@ nnoremap <silent><leader>r :redraw!<CR>
 nnoremap <silent><leader>t :tabnew<cr>
 nmap <silent><C-}> :tabnext<cr>
 nmap <silent><C-{> :tabprev<cr>
-nnoremap <silent><leader>c :tabclose<cr>
+nnoremap <silent><leader><leader>c :tabclose<cr>
 nnoremap <silent><leader>1 :tabnext 1<cr>
 nnoremap <silent><leader>2 :tabnext 2<cr>
 nnoremap <silent><leader>3 :tabnext 3<cr>
@@ -254,3 +259,12 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <leader>z :ZoomToggle<CR>
+
+" slime
+let g:slime_target = "tmux"
+let g:slime_paste_file = "/tmp/.slime_paste"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_dont_ask_default = 1
+
+" merlin
+nnoremap <C-t> :MerlinTypeOf<CR>
