@@ -69,6 +69,21 @@ brew install zsh \
              fzf \
              nvm
 
+# install quick look plugins
+brew cask install \
+  qlcolorcode \
+  qlstephen \
+  qlmarkdown \
+  quicklook-json \
+  qlprettypatch \
+  quicklook-csv \
+  betterzipql \
+  qlimagesize \
+  webpquicklook \
+  suspicious-package \
+  quicklookase \
+  qlvideo
+
 # Switch to ZSH
 chsh -s /usr/local/bin/zsh
 /usr/local/bin/zsh
