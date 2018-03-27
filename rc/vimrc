@@ -79,6 +79,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set backupdir=/tmp
 set directory=/tmp
 set ignorecase
+set smartcase
 set expandtab
 set smarttab
 set smartindent
@@ -174,6 +175,7 @@ nnoremap <silent><C-j> :call Navigate('j')<CR>
 let g:syntastic_enable_signs=1
 "let g:syntastic_objc_config_file = ".clang_complete"
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_ocaml_checkers = ['merlin']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
@@ -260,11 +262,9 @@ endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <leader>z :ZoomToggle<CR>
 
-" slime
-let g:slime_target = "tmux"
-let g:slime_paste_file = "/tmp/.slime_paste"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-let g:slime_dont_ask_default = 1
 
-" merlin
-nnoremap <C-t> :MerlinTypeOf<CR>
+" GHC MOD
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
