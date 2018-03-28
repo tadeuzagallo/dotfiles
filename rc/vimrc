@@ -17,42 +17,56 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'terryma/vim-multiple-cursors'
+" Theme
+NeoBundle 'dracula/vim'
 
+" Visual
+NeoBundle 'bling/vim-airline'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Text Editing
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'godlygeek/tabular'
+
+" IDE features
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'rdnetto/YCM-Generator'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'jpalardy/vim-slime'
+
+" JavaScript
 NeoBundleLazy 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'tadeuzagallo/vim-jsx', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
+
+" CPP
 NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
 
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'rdnetto/YCM-Generator'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'godlygeek/tabular'
-NeoBundle "gilligan/vim-lldb"
-NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'dracula/vim'
-NeoBundle 'jvoorhis/coq.vim'
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Markdown
+NeoBundleLazy 'tpope/vim-markdown', { 'autoload': {'filetypes': ['markdown']} }
 
-NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc']}}
-NeoBundleLazy 'eraserhd/vim-ios.git', {'autoload':{'filetypes':['objc']}}
-
-NeoBundle 'neovimhaskell/haskell-vim'
+" Haskell
+NeoBundleLazy 'neovimhaskell/haskell-vim', { 'autoload': {'filetypes': ['haskell']} }
+NeoBundleLazy 'eagletmt/ghcmod-vim', { 'autoload': {'filetypes': ['haskell']} }
+NeoBundleLazy 'eagletmt/neco-ghc', { 'autoload': {'filetypes': ['haskell']} }
 
 " OCaml
-NeoBundle 'the-lambda-church/merlin', { 'do': './configure && make && make install', 'rtp': '/usr/local/share/ocamlmerlin/vim' }
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'OCamlPro/ocp-indent'
+NeoBundleLazy 'the-lambda-church/merlin', { 'do': './configure && make && make install', 'rtp': '/usr/local/share/ocamlmerlin/vim', 'autoload': {'filetypes': ['ocaml']} }
+NeoBundleLazy 'OCamlPro/ocp-indent', { 'autoload': {'filetypes': ['ocaml']} }
+
+" Agda
+NeoBundleLazy 'derekelkins/agda-vim', { 'autoload': {'filetypes': ['agda']} }
+
+" Coq
+NeoBundleLazy 'jvoorhis/coq.vim', { 'autoload': {'filetypes': ['coq']} }
 
 call neobundle#end()
 
