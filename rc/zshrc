@@ -1,3 +1,11 @@
+_trap_exit() { tmux kill-session -t $$; }
+trap _trap_exit EXIT
+if [ -z "$TMUX" ]; then
+  tmux new-session -s $$;
+else
+  export TERM="screen-256color"
+fi
+
 if [[ "$PROFILE" == "1" ]]; then
   zmodload zsh/zprof
   zmodload zsh/datetime
@@ -5,7 +13,7 @@ if [[ "$PROFILE" == "1" ]]; then
   t0=$EPOCHREALTIME
 fi
 
-export PATH=/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/buck/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$PATH
+export PATH=~/.local/bin:/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/buck/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 export KEYTIMEOUT=1
 
@@ -46,24 +54,15 @@ alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
 
-_trap_exit() { tmux kill-session -t $$; }
-trap _trap_exit EXIT
-if [ $TERM != 'screen-256color' ]; then
-  tmux new-session -s $$;
-fi
-
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 unsetopt nomatch
 unsetopt correct_all
 
 
-export NODE_PATH=/usr/local/share/npm/lib/node_modules
-export NODE_ENV=development
-
 fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/local/opt/zsh-history-substring-search/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey -v
 
