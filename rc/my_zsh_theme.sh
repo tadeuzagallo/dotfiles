@@ -40,6 +40,9 @@ function username() {
 
 # notify_me: http://frantic.im/notify-on-completion
 function f_notifyme {
+  # only run if $NOTIFY_ME is set
+  [ -z "$NOTIFY_ME" ] && return
+
   LAST_EXIT_CODE=$?
   CMD=$(fc -ln -1)
   # No point in waiting for the command to complete
