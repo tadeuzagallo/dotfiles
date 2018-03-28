@@ -198,26 +198,32 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 nnoremap <silent>` :Errors<CR>
-nnoremap <silent><leader>` :lclose<CR>
+nnoremap <silent><leader>` :SyntasticToggleMode<CR>
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+" ghc-mod
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
 
 " filetype format
-
 autocmd BufRead,BufNewFile BUCK set filetype=python
-" YouCompleteMe
 
+" YouCompleteMe
 let g:ycm_key_list_select_completion=['<C-n>']
 let g:ycm_key_list_previous_completion=['<C-p>']
 
 " Tabular
-if exists(":Tabularize")
-  nmap <Leader>= :Tabularize /=<CR>
-  vmap <Leader>= :Tabularize /=<CR>
-  nmap <Leader>; :Tabularize /:\zs<CR>
-  vmap <Leader>; :Tabularize /:\zs<CR>
-endif
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
 
 " switch between source and header
-
 function! Switch()
   let file = expand('%')
   let header_pattern = '\.h\(pp\)\{0,1}'
@@ -277,7 +283,7 @@ command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <leader>z :ZoomToggle<CR>
 
 " merlin
-nnoremap <C-t> :MerlinTypeOf<CR>
+nnoremap <silent> <localleader>g :MerlinLocate<CR>
 
 " unicode
 inoremap \forall ∀
@@ -349,3 +355,11 @@ inoremap \phi       φ
 inoremap \chi       χ
 inoremap \psy       ψ
 inoremap \omega     ω
+
+" Italic support
+hi htmlArg gui=italic
+hi Comment gui=italic
+hi Type    gui=italic
+hi htmlArg cterm=italic
+hi Comment cterm=italic
+hi Type    cterm=italic
