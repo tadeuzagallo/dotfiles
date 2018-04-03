@@ -28,7 +28,8 @@ NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Text Editing
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'Townk/vim-autoclose'
+" conflicts with haskell-vim
+"NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'godlygeek/tabular'
@@ -54,7 +55,6 @@ NeoBundleLazy 'tpope/vim-markdown', { 'autoload': {'filetypes': ['markdown']} }
 
 " Haskell
 NeoBundleLazy 'neovimhaskell/haskell-vim', { 'autoload': {'filetypes': ['haskell']} }
-NeoBundleLazy 'eagletmt/ghcmod-vim', { 'autoload': {'filetypes': ['haskell']} }
 NeoBundleLazy 'eagletmt/neco-ghc', { 'autoload': {'filetypes': ['haskell']} }
 
 " OCaml
@@ -110,6 +110,8 @@ set incsearch
 set foldmethod=marker
 set pastetoggle=<f2>
 set wildignore+=*.o,*.hi,*.a,*.obj,*/.git/*,*/node_modules/*,*.class,*.zip,*.aux,*/_build/*
+set lazyredraw
+set magic
 
 " spell check
 set spell spelllang=en_us
@@ -211,6 +213,20 @@ map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
+
+" haskell-vim
+let g:haskell_classic_highlighting = 1
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 2
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 6
+let g:haskell_indent_before_where = 2
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+let g:haskell_indent_guard = 2
+let g:haskell_indent_case_alternative = 1
+let g:cabal_indent_section = 2
 
 " filetype format
 autocmd BufRead,BufNewFile BUCK set filetype=python
