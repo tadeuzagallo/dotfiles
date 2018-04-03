@@ -18,7 +18,7 @@ fi
 
 export PATH=~/.local/bin:/usr/local/opt/ccache/libexec:~/devtools/arcanist/bin:~/buck/bin:/opt/facebook/bin:/usr/local/bin:/usr/local/sbin:/opt/facebook/bin:./node_modules/.bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
-export KEYTIMEOUT=1
+export KEYTIMEOUT=10
 
 autoload -U zutil      # [1]
 autoload -U compinit   # [2]
@@ -74,6 +74,8 @@ bindkey '^N' history-substring-search-down
 
 bindkey -M vicmd '^P' history-substring-search-up
 bindkey -M vicmd '^N' history-substring-search-down
+
+bindkey -M viins 'jk' vi-cmd-mode
 
 alias ip="ipconfig getifaddr en0 || ipconfig getifaddr en1"
 alias weather='curl http://wttr.in/london?m'
