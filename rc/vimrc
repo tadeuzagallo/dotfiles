@@ -34,9 +34,8 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'godlygeek/tabular'
 
 " IDE features
+NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'rdnetto/YCM-Generator'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'jpalardy/vim-slime'
@@ -81,7 +80,6 @@ let g:airline_powerline_fonts = 1
 let g:jsx_ext_required = 0
 
 filetype plugin indent on
-
 syntax enable
 color dracula
 
@@ -205,6 +203,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
 " ghc-mod
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
@@ -213,10 +214,6 @@ map <silent> te :GhcModTypeClear<CR>
 
 " filetype format
 autocmd BufRead,BufNewFile BUCK set filetype=python
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion=['<C-n>']
-let g:ycm_key_list_previous_completion=['<C-p>']
 
 " Tabular
 vmap a= :Tabularize /=<CR>

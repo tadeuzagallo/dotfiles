@@ -6,7 +6,7 @@ set -e
 cmd="$(tmux display -p '#{pane_current_command}')"
 
 shopt -s nocasematch
-if [[ $cmd == "vim" || $cmd == "mvim" ]]; then
+if [[ $cmd == "vim" || $cmd == "nvim" || $cmd == "mvim" ]]; then
   direction="$(echo "${1#-}" | tr 'lLDUR' '\\hjkl')"
   # forward the keystroke to Vim
   tmux send-keys "C-$direction"

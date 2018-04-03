@@ -1,9 +1,12 @@
-_trap_exit() { tmux kill-session -t $$; }
-trap _trap_exit EXIT
-if [ -z "$TMUX" ]; then
-  tmux new-session -s $$;
-else
-  export TERM="screen-256color"
+if [ -z "$VIM" ]; then
+  _trap_exit() { tmux kill-session -t $$; }
+  trap _trap_exit EXIT
+
+  if [ -z "$TMUX" ]; then
+    tmux new-session -s $$;
+  else
+    export TERM="screen-256color"
+  fi
 fi
 
 if [[ "$PROFILE" == "1" ]]; then
