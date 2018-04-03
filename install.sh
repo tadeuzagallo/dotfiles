@@ -42,7 +42,7 @@ done
 cp ./fonts/SourceCode-Powerline-Regular.otf ~/Library/Fonts
 
 pushd ~/Library/Fonts > /dev/null
-curl -L https://github.com/i-tu/Hasklig/releases/download/v1.0-beta/Hasklig-1.0-Beta.zip > Hasklig.zip
+curl -L https://github.com/i-tu/Hasklig/releases/download/1.1/Hasklig-1.1.zip > Hasklig.zip
 unzip Hasklig.zip
 rm Hasklig.zip
 popd > /dev/null
@@ -55,8 +55,8 @@ git submodule update
 which brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install brew dependencies
-brew install macvim --env-std --override-system-vim
-brew install zsh \
+brew install neovim \
+             zsh \
              zsh-completions \
              zsh-syntax-highlighting \
              zsh-history-substring-search \
@@ -84,6 +84,9 @@ brew cask install \
   quicklookase \
   qlvideo
 
+# other cask programs
+brew cask install spectacle
+
 # Switch to ZSH
 chsh -s /usr/local/bin/zsh
 /usr/local/bin/zsh
@@ -92,4 +95,3 @@ chsh -s /usr/local/bin/zsh
 nvm install stable
 
 vim +NeoBundleInstall +qall
-~/.vim/bundle/YouCompleteMe/install.sh
