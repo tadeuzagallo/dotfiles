@@ -62,12 +62,13 @@ brew install neovim \
              zsh-history-substring-search \
              tmux \
              ack \
-             reattach-to-user-namespace \
              the_silver_searcher \
              wget \
              cmake \
              fzf \
              nvm
+
+ln -s /usr/local/bin/nvim /usr/local/bin/vim
 
 # install quick look plugins
 brew cask install \
