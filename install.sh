@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install brew.sh
+which brew 2> /dev/null || echo "Homebrew is required to setup...." && exit 1
+
 pushd $(dirname $0) > /dev/null
 DIR="$PWD"
 popd > /dev/null
@@ -50,9 +53,6 @@ popd > /dev/null
 # install submodules
 git submodule init
 git submodule update
-
-# Install brew.sh
-which brew 2> /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install brew dependencies
 brew install neovim \

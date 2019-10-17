@@ -19,7 +19,7 @@ function ssh_connection() {
 }
 
 function _bg_jobs() {
-  JC=$(jobs | ack '^\[[0-9]' | wc -l | xargs echo)
+  JC=$(jobs | grep '^\[[0-9]' | wc -l | xargs echo)
   if [ $JC -gt 0 ]; then
     echo -e "${GREY}:${RED}$JC"
   fi
