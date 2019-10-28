@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install brew.sh
-which brew 2> /dev/null || echo "Homebrew is required to setup...." && exit 1
+which brew 2> /dev/null || (echo "Homebrew is required to setup...." && exit 1)
 
 pushd $(dirname $0) > /dev/null
 DIR="$PWD"

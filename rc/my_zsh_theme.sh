@@ -49,6 +49,6 @@ function f_notifyme {
   ~/.notify_me "$CMD" "$LAST_EXIT_CODE" &
 }
 
-PS1='$(f_notifyme)$(ssh_connection)${GREEN}$(collapse_pwd)$(_bg_jobs) ${BLUE}λ ${GREY}'
+PS1='$(f_notifyme)$(ssh_connection)${GREEN}$(collapse_pwd)$(_bg_jobs) ${BLUE}=> ${GREY}'
 
 setopt promptsubst
