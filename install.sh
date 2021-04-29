@@ -62,11 +62,11 @@ brew install neovim \
              zsh-history-substring-search \
              tmux \
              ack \
-             the_silver_searcher \
+             ripgrep \
              wget \
              cmake \
              fzf \
-             nvm
+             node
 
 ln -s /usr/local/bin/nvim /usr/local/bin/vim
 
@@ -83,16 +83,11 @@ brew cask install \
   webpquicklook \
   suspicious-package \
   quicklookase \
-  qlvideo
-
-# other cask programs
-brew cask install spectacle
+  qlvideo \
+  spectacle
 
 # Switch to ZSH
 chsh -s /usr/local/bin/zsh
 /usr/local/bin/zsh
-
-# Install the latest stable version of node.js
-nvm install stable
 
 vim +NeoBundleInstall +qall

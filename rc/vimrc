@@ -283,7 +283,7 @@ map <silent> <leader><tab> :NERDTreeToggle<CR>
 nnoremap <silent><C-p> :FZF<CR>
 
 " ack.vim
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'rg --vimgrep --no-heading'
 
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
@@ -302,6 +302,14 @@ nnoremap <silent> <leader>z :ZoomToggle<CR>
 
 " merlin
 nnoremap <silent> <localleader>g :MerlinLocate<CR>
+
+" deoplete + vim-multiple-cursors interop issue
+function g:Multiple_cursors_before()
+    call deoplete#custom#buffer_option('auto_complete', v:false)
+endfunction
+function g:Multiple_cursors_after()
+    call deoplete#custom#buffer_option('auto_complete', v:true)
+endfunction
 
 " unicode
 inoremap \forall ∀

@@ -32,6 +32,7 @@
 [core]
 	excludesfile = /Users/tadeuzagallo/.global_ignore
 	autocrlf = input
+	precomposeUnicode = true
 [push]
 	default = current
 [url "https://"]
