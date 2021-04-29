@@ -68,6 +68,7 @@ NeoBundleLazy 'derekelkins/agda-vim', { 'autoload': {'filetypes': ['agda']} }
 " Coq
 NeoBundleLazy 'jvoorhis/coq.vim', { 'autoload': {'filetypes': ['coq']} }
 
+NeoBundleLazy  'keith/swift.vim', { 'autoload': {'filetypes': ['swift']} }
 call neobundle#end()
 
 " Required:

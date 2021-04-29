@@ -1,1 +1,1 @@
-/Users/tadeuzagallo/dotfiles/rc/vimrc
+../../vimrc
