@@ -13,3 +13,6 @@
 [submodule "zsh-history-substring-search"]
 	path = zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "rc/vim/dein.vim"]
+	path = rc/vim/dein.vim
+	url = https://github.com/Shougo/dein.vim.git

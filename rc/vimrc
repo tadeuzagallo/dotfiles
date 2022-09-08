@@ -1,119 +1,47 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin()
 
 " Theme
-NeoBundle 'dracula/vim'
-
-" Visual
-NeoBundle 'bling/vim-airline'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Text Editing
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'terryma/vim-multiple-cursors'
-" conflicts with haskell-vim
-"NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'godlygeek/tabular'
 
 " IDE features
-NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'mileszs/ack.vim'
+
+" NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'rizzatti/dash.vim'
+" NeoBundle 'jpalardy/vim-slime'
 
 " JavaScript
-NeoBundleLazy 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
-NeoBundleLazy 'tadeuzagallo/vim-jsx', {'autoload':{'filetypes':['javascript']}}
-NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filetypes':['javascript']}}
-NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
+"NeoBundleLazy 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
+"NeoBundleLazy 'tadeuzagallo/vim-jsx', {'autoload':{'filetypes':['javascript']}}
+"NeoBundleLazy '1995eaton/vim-better-javascript-completion', {'autoload':{'filetypes':['javascript']}}
+"NeoBundleLazy 'moll/vim-node', {'autoload':{'filetypes':['javascript']}}
 
 " CPP
-NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
+"NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
 
 " Markdown
-NeoBundleLazy 'tpope/vim-markdown', { 'autoload': {'filetypes': ['markdown']} }
+"NeoBundleLazy 'tpope/vim-markdown', { 'autoload': {'filetypes': ['markdown']} }
 
 " Haskell
-NeoBundleLazy 'neovimhaskell/haskell-vim', { 'autoload': {'filetypes': ['haskell']} }
-NeoBundleLazy 'eagletmt/neco-ghc', { 'autoload': {'filetypes': ['haskell']} }
+"NeoBundleLazy 'neovimhaskell/haskell-vim', { 'autoload': {'filetypes': ['haskell']} }
+"NeoBundleLazy 'eagletmt/neco-ghc', { 'autoload': {'filetypes': ['haskell']} }
 
 " OCaml
-NeoBundleLazy 'the-lambda-church/merlin', { 'do': './configure && make && make install', 'rtp': '/usr/local/share/ocamlmerlin/vim', 'autoload': {'filetypes': ['ocaml']} }
-NeoBundleLazy 'OCamlPro/ocp-indent', { 'autoload': {'filetypes': ['ocaml']} }
+"NeoBundleLazy 'the-lambda-church/merlin', { 'do': './configure && make && make install', 'rtp': '/usr/local/share/ocamlmerlin/vim', 'autoload': {'filetypes': ['ocaml']} }
+"NeoBundleLazy 'OCamlPro/ocp-indent', { 'autoload': {'filetypes': ['ocaml']} }
 
 " Agda
-NeoBundleLazy 'derekelkins/agda-vim', { 'autoload': {'filetypes': ['agda']} }
+"NeoBundleLazy 'derekelkins/agda-vim', { 'autoload': {'filetypes': ['agda']} }
 
 " Coq
-NeoBundleLazy 'jvoorhis/coq.vim', { 'autoload': {'filetypes': ['coq']} }
+"NeoBundleLazy 'jvoorhis/coq.vim', { 'autoload': {'filetypes': ['coq']} }
 
-NeoBundleLazy  'keith/swift.vim', { 'autoload': {'filetypes': ['swift']} }
-call neobundle#end()
+"NeoBundleLazy  'keith/swift.vim', { 'autoload': {'filetypes': ['swift']} }
 
-" Required:
+call plug#end()
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
-let mapleader=","
 let g:airline_powerline_fonts = 1
-let g:jsx_ext_required = 0
 
-filetype plugin indent on
-syntax enable
-color dracula
-
-set mouse=a
-set clipboard=unnamed
-set noshowmode
-set backspace=indent,eol,start
-set timeoutlen=1000 ttimeoutlen=0
-set backupdir=/tmp
-set directory=/tmp
-set ignorecase
-set smartcase
-set expandtab
-set smarttab
-set smartindent
-set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set number
-set cursorline
-set linespace=4
-set laststatus=2
-set colorcolumn=80
-set splitright
-set splitbelow
-set incsearch
-set foldmethod=marker
-set pastetoggle=<f2>
-set wildignore+=*.o,*.hi,*.a,*.obj,*/.git/*,*/node_modules/*,*.class,*.zip,*.aux,*/_build/*
-set lazyredraw
-set magic
 
 " spell check
 set spell spelllang=en_us
@@ -132,173 +60,17 @@ endfunction
 
 nnoremap <silent><leader><leader>t :call Trim()<CR>
 
-inoremap jk <Esc>
-
 nnoremap <silent><leader>b :buffers<CR>:buffer<Space>
 nnoremap <silent> <F8> mmgg=G'm^
 
-" pane splitting shortcuts
-nnoremap <silent><leader>v :vs<cr>
-nnoremap <silent><leader>s :sp<cr>
-nnoremap <silent><leader>q :q<cr>
-nnoremap <silent><leader>w :w<cr>
-nnoremap <silent><leader>r :redraw!<CR>
-
-" tabs shortcuts
-nnoremap <silent><leader>t :tabnew<cr>
-nmap <silent><C-}> :tabnext<cr>
-nmap <silent><C-{> :tabprev<cr>
-nnoremap <silent><leader><leader>c :tabclose<cr>
-nnoremap <silent><leader>1 :tabnext 1<cr>
-nnoremap <silent><leader>2 :tabnext 2<cr>
-nnoremap <silent><leader>3 :tabnext 3<cr>
-nnoremap <silent><leader>4 :tabnext 4<cr>
-nnoremap <silent><leader>5 :tabnext 5<cr>
-nnoremap <silent><leader>6 :tabnext 6<cr>
-nnoremap <silent><leader>7 :tabnext 7<cr>
-nnoremap <silent><leader>8 :tabnext 8<cr>
-nnoremap <silent><leader>9 :tablast <cr>
-
 " pane navigation
 
-function! Navigate(direction)
-  let nr = winnr()
-  exec 'wincmd ' . a:direction
-
-  if nr == winnr()
-    let nr = tabpagenr()
-
-    if a:direction == 'h' && nr > 1
-      exec 'tabprevious'
-    elseif a:direction == 'l' && tabpagewinnr(nr + 1) > 0
-      exec 'tabnext'
-    endif
-
-    if nr == tabpagenr()
-      let cmd = 'tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR')
-      call system(cmd)
-    endif
-  endif
-endfunction
-
-nnoremap <silent><C-h> :call Navigate('h')<CR>
-nnoremap <silent><C-l> :call Navigate('l')<CR>
-nnoremap <silent><C-k> :call Navigate('k')<CR>
-nnoremap <silent><C-j> :call Navigate('j')<CR>
-
-"syntastic
-
-let g:syntastic_enable_signs=1
-"let g:syntastic_objc_config_file = ".clang_complete"
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ocaml_checkers = ['merlin']
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++17 -stdlib=libc++'
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-nnoremap <silent>` :Errors<CR>
-nnoremap <silent><leader>` :SyntasticToggleMode<CR>
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
-" ghc-mod
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
-
-" haskell-vim
-let g:haskell_classic_highlighting = 1
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 2
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-let g:haskell_indent_before_where = 2
-let g:haskell_indent_after_bare_where = 2
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 1
-let g:haskell_indent_guard = 2
-let g:haskell_indent_case_alternative = 1
-let g:cabal_indent_section = 2
-
-" filetype format
-autocmd BufRead,BufNewFile BUCK set filetype=python
-
-" Tabular
-vmap a= :Tabularize /=<CR>
-vmap a; :Tabularize /::<CR>
-vmap a- :Tabularize /-><CR>
-
-" switch between source and header
-function! Switch()
-  let file = expand('%')
-  let header_pattern = '\.h\(pp\)\{0,1}'
-  let source_pattern = '\(\.c\(c\|pp\)\{0,1}\|\.m\{1,2}\)$'
-  if match(file, source_pattern) > 0
-    let header = substitute(file, source_pattern, '.h', '')
-    execute ":find " header
-  elseif match(file, header_pattern) > 0
-    let source = substitute(file, header_pattern, '.c', '')
-    if findfile(source) == ""
-      let source = substitute(file, header_pattern, '.cpp', '')
-    endif
-    if findfile(source) == ""
-      let source = substitute(file, header_pattern, '.cc', '')
-    endif
-    if findfile(source) == ""
-      let source = substitute(file, header_pattern, '.m', '')
-    endif
-    if findfile(source) == ""
-      let source = substitute(file, header_pattern, '.mm', '')
-    endif
-    execute ":edit " findfile(source)
-  endif
-endfunction
-
-nnoremap <silent><leader><leader><tab> :call Switch()<CR>
-
-" dash.vim
-
-:nmap <silent> <leader>d <Plug>DashSearch
-
-" flow-vim
-
-let g:flow#autoclose = 1
 
 " nerdtree
 
 map <silent> <leader><tab> :NERDTreeToggle<CR>
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" FZF
-nnoremap <silent><C-p> :FZF<CR>
-
-" ack.vim
-let g:ackprg = 'rg --vimgrep --no-heading'
-
-" Zoom / Restore window.
-function! s:ZoomToggle() abort
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
-    else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
-    endif
-endfunction
-command! ZoomToggle call s:ZoomToggle()
-nnoremap <silent> <leader>z :ZoomToggle<CR>
 
 " merlin
 nnoremap <silent> <localleader>g :MerlinLocate<CR>
@@ -310,77 +82,6 @@ endfunction
 function g:Multiple_cursors_after()
     call deoplete#custom#buffer_option('auto_complete', v:true)
 endfunction
-
-" unicode
-inoremap \forall ∀
-inoremap \turnstile ⊢
-inoremap \top ⊤
-inoremap \bot ⊥
-inoremap \sum ∑
-inoremap \neg ¬
-inoremap \empty ∅
-inoremap \union ∪
-inoremap \intersect ∩
-inoremap \member ∈
-inoremap \or ∨
-inoremap \and ∧
-inoremap \nat ℕ
-inoremap \int ℤ
-
-
-" GREEK LETTERS
-
-" upper case
-inoremap \Alpha     Α
-inoremap \Beta      Β
-inoremap \Gamma      Γ
-inoremap \Delta     Δ
-inoremap \Epsilon   Ε
-inoremap \Zeta      Ζ
-inoremap \Eta       Η
-inoremap \Theta     Θ
-inoremap \Iota      Ι
-inoremap \Kapa      Κ
-inoremap \Lambda    Λ
-inoremap \Mu        Μ
-inoremap \Nu        Ν
-inoremap \Xi        Ξ
-inoremap \Omicron   Ο
-inoremap \Pi        Π
-inoremap \Rho       Ρ
-inoremap \Sigma     Σ
-inoremap \Tau       Τ
-inoremap \Upsilon   Υ
-inoremap \Phi       Φ
-inoremap \Chi       Χ
-inoremap \Psy       Ψ
-inoremap \Omega     Ω
-
-" lower case
-inoremap \alpha     α
-inoremap \beta      β
-inoremap \gamma      γ
-inoremap \delta     δ
-inoremap \epsilon   ε
-inoremap \zeta      ζ
-inoremap \eta       η
-inoremap \theta     θ
-inoremap \iota      ι
-inoremap \kapa      κ
-inoremap \lambda    λ
-inoremap \mu        μ
-inoremap \nu        ν
-inoremap \xi        ξ
-inoremap \omicron   ο
-inoremap \pi        π
-inoremap \rho       ρ
-inoremap \sigma     σ
-inoremap \tau       τ
-inoremap \upsilon   υ
-inoremap \phi       φ
-inoremap \chi       χ
-inoremap \psy       ψ
-inoremap \omega     ω
 
 " Italic support
 hi htmlArg gui=italic
