@@ -22,8 +22,8 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     requires = {
-      'williamboman/mason.nvim',
-      "williamboman/mason-lspconfig.nvim",
+      --'williamboman/mason.nvim',
+      --"williamboman/mason-lspconfig.nvim",
 
       -- Code completion
       'hrsh7th/cmp-nvim-lsp',
@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/nvim-cmp',
+      'ray-x/cmp-treesitter',
     },
   }
 

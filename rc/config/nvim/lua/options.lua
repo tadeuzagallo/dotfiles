@@ -4,6 +4,7 @@ local opt = vim.opt
 -- syntax on
 vim.cmd([[color dracula]])
 
+opt.clipboard = 'unnamed'
 opt.ignorecase = true
 opt.smartcase = true
 opt.incsearch = true
