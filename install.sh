@@ -81,13 +81,5 @@ brew cask install \
   betterzipql \
   qlimagesize \
   webpquicklook \
-  suspicious-package \
   quicklookase \
-  qlvideo \
-  spectacle
-
-# Switch to ZSH
-chsh -s /usr/local/bin/zsh
-/usr/local/bin/zsh
-
-vim +NeoBundleInstall +qall
+  qlvideo
