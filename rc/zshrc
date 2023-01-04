@@ -1,16 +1,5 @@
-export PATH=/Volumes/Data/bin:${HOME}/.jsvu:~/.local/bin:/usr/local/opt/ccache/libexec:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=${HOME}/.jsvu:~/.local/bin:/usr/local/opt/ccache/libexec:/usr/local/bin:/usr/local/sbin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-if [ -z "$VIM" ]; then
-  _trap_exit() { tmux kill-session -t $$; }
-  trap _trap_exit EXIT
-
-  if [ -z "$TMUX" ]; then
-    tmux new-session -s $$;
-  else
-    export TERM="screen-256color"
-  fi
-fi
 
 if [[ "$PROFILE" == "1" ]]; then
   zmodload zsh/zprof
