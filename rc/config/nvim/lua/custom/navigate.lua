@@ -14,16 +14,16 @@ local function navigate(direction)
       vim.cmd('tabnext')
     end
 
-    --if nr == fn.tabpagenr() then
-      --local directionMap = {
-        --h = 'Left',
-        --j = 'Down',
-        --k = 'Up',
-        --l = 'Right',
-      --}
-      --local termDirection = directionMap[direction]
-      --fn.system { '/Applications/WezTerm.app/Contents/MacOS/wezterm', 'cli', 'activate-pane-direction', termDirection }
-    --end
+    if nr == fn.tabpagenr() then
+      local directionMap = {
+        h = 'Left',
+        j = 'Down',
+        k = 'Up',
+        l = 'Right',
+      }
+      local termDirection = directionMap[direction]
+      fn.system { '/Applications/WezTerm.app/Contents/MacOS/wezterm', 'cli', 'activate-pane-direction', termDirection }
+    end
   end
 end
 
