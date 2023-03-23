@@ -18,23 +18,23 @@ autoload -U complist   # [3]
 #plugins=(git brew history-substring-search)
 
 plugins=(history-substring-search)
+source "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Set ZSH so oh-my-zsh finds its installation
-ZSH=~/.oh-my-zsh
+ZSH=$XDG_DATA_HOME/oh-my-zsh
 
 # !! slow 450ms :(
 source $ZSH/oh-my-zsh.sh
 
-source ~/.my_zsh_theme.sh
+source $XDG_DATA_HOME/my_zsh_theme.sh
 
 # Customize to your needs...
 
 alias sz='source ~/.zshrc'
-alias ez='vim ~/.zshrc'
-alias ev='vim ~/.vimrc'
-alias et='vim ~/.tmux.conf'
-alias rn=react-native
+alias ez='vim $XDG_CONFIG_HOME/zshrc'
+alias ev='vim $XDG_CONFIG_HOME/nvim'
 
+alias vim=nvim
 alias :e=cd
 alias g='git'
 alias v='vim'
@@ -54,8 +54,6 @@ unsetopt correct_all
 
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey -v
 
@@ -88,14 +86,3 @@ if [[ "$PROFILE" == "1" ]]; then
   }
   unset t0
 fi
-export ANDROID_HOME="/Users/tadeu.zagallo/Library/Android/sdk"
-export ANDROID_SDK_ROOT="/Users/tadeu.zagallo/Library/Android/sdk"
-export GRADLE_USER_HOME="/usr/local/share/gradle"
-export M2_HOME="/usr/local/share/maven"
-export LANG="en_US.UTF-8"
-. $(brew --prefix asdf)/libexec/asdf.sh
-eval "$(direnv hook $SHELL)"
-export PATH=${PATH}:/Users/tadeu.zagallo/.asdf/installs/python/3.9.10/bin
-export PATH=${PATH}:$VOLTA_HOME/bin
-export JAVA_HOME="`/usr/libexec/java_home -v AndroidStudioJre`"
-export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
