@@ -1,6 +1,4 @@
 .DS_Store
 .swp
 .swo
-rc/vim/bundle
-rc/vim/.netrwhist
-!rc/vim/bundle/neobundle.vim
+rc/config/nvim/plugin/packer_compiled.lua
