@@ -7,6 +7,7 @@ require('plugins.telescope')
 require('plugins.lualine')
 require('plugins.mason')
 require('plugins.nvim-tree')
+require('plugins.treesitter')
 
 -- custom plugins
 require('custom.navigate')
