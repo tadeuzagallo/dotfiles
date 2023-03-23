@@ -41,12 +41,12 @@ function username() {
 # notify_me: http://frantic.im/notify-on-completion
 function f_notifyme {
   # only run if $NOTIFY_ME is set
-  [ -z "$NOTIFY_ME" ] && return
+  #[ -z "$NOTIFY_ME" ] && return
 
   LAST_EXIT_CODE=$?
   CMD=$(fc -ln -1)
   # No point in waiting for the command to complete
-  ~/.notify_me "$CMD" "$LAST_EXIT_CODE" &
+  $XDG_DATA_HOME/notify_me "$CMD" "$LAST_EXIT_CODE" &
 }
 
 PS1='$(f_notifyme)$(ssh_connection)${GREEN}$(collapse_pwd)$(_bg_jobs) ${BLUE}=> ${GREY}'

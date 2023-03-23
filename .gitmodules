@@ -1,12 +1,6 @@
-[submodule "rc/oh-my-zsh"]
-	path = rc/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "zsh-history-substring-search"]
-	path = zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search
-[submodule "rc/vim/dein.vim"]
-	path = rc/vim/dein.vim
-	url = https://github.com/Shougo/dein.vim.git
+[submodule "rc/data/oh-my-zsh"]
+	path = rc/data/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
