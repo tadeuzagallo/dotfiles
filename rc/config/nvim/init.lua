@@ -5,7 +5,6 @@ require('mappings')
 -- configure plugins
 require('plugins.telescope')
 require('plugins.lualine')
-require('plugins.nvim-cmp')
 require('plugins.mason')
 require('plugins.nvim-tree')
 
