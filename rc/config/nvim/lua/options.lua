@@ -17,6 +17,7 @@ opt.colorcolumn = '80'
 opt.expandtab = true
 opt.softtabstop = 2
 opt.shiftwidth = 2
+opt.scrolloff = 5
 
 -- opt.mouse = 'a'
 -- opt.clipboard = 'unnamed'
